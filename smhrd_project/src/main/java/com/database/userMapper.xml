@@ -8,11 +8,11 @@
 <!-- parameterType : alias 지정했는지 확인할 것 -->
 
 <select id="login"
-parameterType="userVO"
-resultType="userVO">
+parameterType="com.model.userVO"
+resultType="com.model.userVO">
 select * from user_info
 where user_id = #{user_id}
-and pw = #{pw}
+and user_pw = #{user_pw}
 </select>
 
 </mapper>
