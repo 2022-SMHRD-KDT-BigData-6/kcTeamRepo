@@ -25,9 +25,10 @@ public class LoginService extends HttpServlet {
 	
 	userVO uvo = new userVO();
 	uvo.setUser_id(user_id);
-	uvo.setUser_pw(user_id);
+	uvo.setUser_pw(user_pw);
 	
 	userDAO dao = new userDAO();
+	
 	userVO result = dao.login(uvo);
 	
 	if(result != null) {
@@ -39,7 +40,7 @@ public class LoginService extends HttpServlet {
 		System.out.println("로그인 실패");
 	}
 	
-	//response.sendRedirect("GoMain"); 만들면 이동
+	response.sendRedirect("Main.jsp");
 	
 	}
 
