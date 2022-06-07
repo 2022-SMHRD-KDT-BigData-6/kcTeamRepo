@@ -20,6 +20,6 @@
   <!-- 내가 사용할 실제 sql 파일이 들어있는 mapper로 설정해줄 것 -->
   
   <mappers>
-    <mapper resource="com/database/Mapper.xml"/>
+    <mapper resource="com/database/userMapper.xml"/>
   </mappers>
 </configuration>

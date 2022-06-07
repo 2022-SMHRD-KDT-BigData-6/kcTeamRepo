@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class detail_training_rutin_infoVO {
-	int index_no;
-	int rutin_index;
-	int trainint_index;
-	int set_val;
-	String secncnt_val;
-	int favor_check;
+	private int index_no;
+	private int rutin_index;
+	private int trainint_index;
+	private int set_val;
+	private String secncnt_val;
+	private int favor_check;
 }
