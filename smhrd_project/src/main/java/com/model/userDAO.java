@@ -15,6 +15,7 @@ public class userDAO {
 		userVO result = null;
 				try {
 					result=session.selectOne("login",uvo);
+					System.out.println(result.getUser_id());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
