@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace : mapper 파일을 구분할 수 있는 고유 식별자 -->
+<!-- 이름을 지정해줄 때 DAO 클래스 파일명과 일치시키는 경우가 많음 -->
+<mapper namespace="com.model.detail_training_rutin_infoDAO">
+<!-- parameterType : alias 지정했는지 확인할 것 -->
+
+<insert id="detail_rutininsert"
+parameterType="com.model.detail_training_rutin_infoVO">
+insert into detail_training_rutin_info
+values(
+pt_index_no_seq.nextval,
+#{rutin_index},
+#{training_index},
+#{set_val},
+#{secncnt_val},
+#{favor_check}
+)
+</insert>
+
+<select id="select_rutin"
+parameterType="int"
+resultType="com.model.detail_training_rutin_infoVO">
+select index_no,(select b.training_name from training_rutin_info where rutin_index=#{rutin_index}),
+(select c.training_name from training_info where training_index in(select training_index from detail_training_rutin_info
+where rutin_index=#{rutin_index})),
+set_val, secncnt_val,favor_check
+ from detail_training_rutin_info a,training_rutin_info b,training_info c
+where a.rutin_index = #{rutin_index}
+order by index_no
+
+
+</select>
+
+</mapper>

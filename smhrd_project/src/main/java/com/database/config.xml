@@ -21,5 +21,7 @@
   
   <mappers>
     <mapper resource="com/database/userMapper.xml"/>
+    <mapper resource="com/database/training_rutinMapper.xml"/>
+    <mapper resource="com/database/detail_training_rutinMapper.xml"/>
   </mappers>
 </configuration>

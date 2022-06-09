@@ -8,12 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.model.userDAO;
-import com.model.userVO;
+import com.model.user_infoDAO;
+import com.model.user_infoVO;
 
-/**
- * Servlet implementation class LoginService
- */
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -23,13 +20,13 @@ public class LoginService extends HttpServlet {
 	String user_id = request.getParameter("user_id");
 	String user_pw = request.getParameter("user_pw");
 	
-	userVO uvo = new userVO();
+	user_infoVO uvo = new user_infoVO();
 	uvo.setUser_id(user_id);
 	uvo.setUser_pw(user_pw);
 	
-	userDAO dao = new userDAO();
+	user_infoDAO dao = new user_infoDAO();
 	
-	userVO result = dao.login(uvo);
+	user_infoVO result = dao.login(uvo);
 	
 	if(result != null) {
 		System.out.println("로그인 성공");

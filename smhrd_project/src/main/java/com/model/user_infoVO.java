@@ -8,12 +8,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class userVO {
+public class user_infoVO {
 	private String user_id;
 	private String user_pw;
 	private String nick_name;
 	private int height_val;
 	private int weight_val;
-	private int bmi;
+	private int bmi_val;
 	private String address;
 }
