@@ -9,11 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class detail_training_rutin_infoVO {
+public class user_training_infoVO {
 	private int index_no;
-	private int rutin_index;
 	private int training_index;
 	private int set_val;
 	private String secncnt_val;
-	private int favor_check;
+	private String training_date;
 }

@@ -14,6 +14,4 @@ public class user_infoVO {
 	private String nick_name;
 	private int height_val;
 	private int weight_val;
-	private int bmi_val;
-	private String address;
 }

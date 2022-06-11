@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 public class training_infoVO {
 	private int training_index;
 	private String training_name;
-	private String training_video;
 	private String act_info;
-	private String caution_info;
+	private String training_part;
+	private String training_equip;
+	private String training_dif;
 }

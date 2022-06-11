@@ -7,16 +7,16 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.database.SqlSessionManager;
 
-public class detail_training_rutin_infoDAO {
+public class user_training_infoDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
 	SqlSession session = null;
 	int cnt =0;	
 	
-	public int detail_rutininsert(detail_training_rutin_infoVO vo) {
+	public int surveyinsert(user_training_infoVO vo) {
 		
 		try {
 			session = sqlSessionFactory.openSession(true);
-			cnt = session.insert("detail_rutininsert",vo);
+			cnt = session.insert("surveyinsert",vo);
 		} catch (Exception e) {
 		e.printStackTrace();
 		}
@@ -25,11 +25,11 @@ public class detail_training_rutin_infoDAO {
 	}
 
 
-	public List<detail_training_rutin_infoVO> select_rutin(int rutin_index) {
+	public user_training_infoVO select_index(String training_date) {
 		session = sqlSessionFactory.openSession(true);
-		List<detail_training_rutin_infoVO> vo = null;
+		user_training_infoVO vo = null;
 		try {
-			vo = session.selectList("select_rutin",rutin_index);
+			vo = session.selectOne("select_index",training_date);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

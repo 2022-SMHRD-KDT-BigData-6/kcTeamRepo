@@ -1,3 +1,5 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.model.user_infoVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,6 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<%
+user_infoVO vo = (user_infoVO)session.getAttribute("vo");
+%>
 <div id="wrapper" align="center"> 
 	<div id="forms" align="center">
 	<nav>
@@ -19,6 +25,21 @@
 				<li><input type="password" name="user_pw" placeholder="PW를 입력하세요"></li>
 				<li><input type="submit" value="LogIn" class="button fit"></li>
 			</form>
+			<header id="header" class="alt"> 
+    <a href="#" class="logo">
+    <strong>Forty</strong> 
+    <span>by HTML5 UP</span>
+    </a>
+    <nav>
+   <%
+			if(vo!=null){%>
+				<a href='#'><%=vo.getUser_id() %></a>
+			<%}%>
+    </nav> 
+    </header>
+			
+			
+			
 		</ul>
 		<ul class="actions vertical">
 		<%-- 회원가입 기능을 만들어 봅시다. --%>

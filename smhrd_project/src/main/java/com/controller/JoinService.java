@@ -20,32 +20,32 @@ public class JoinService extends HttpServlet {
 	
 	String user_id = request.getParameter("user_id");
 	String user_pw = request.getParameter("user_pw");
+	String varify_pw = request.getParameter("varify_pw");
 	String nick_name = request.getParameter("nick_name");
 	int height_val = Integer.parseInt(request.getParameter("height_val"));
 	int weight_val = Integer.parseInt(request.getParameter("weight_val"));
-	int bmi_val = Integer.parseInt(request.getParameter("bmi_val"));
-	String address = request.getParameter("address");
+	
 	
 	user_infoVO uvo = new user_infoVO();
 	uvo.setUser_id(user_id);
-	uvo.setUser_pw(user_pw);
+	if(user_pw.equals(varify_pw)) {
+		uvo.setUser_pw(user_pw);
+	}
 	uvo.setNick_name(nick_name);
 	uvo.setHeight_val(height_val);
 	uvo.setWeight_val(weight_val);
-	uvo.setBmi_val(bmi_val);
-	uvo.setAddress(address);
 	
 	user_infoDAO dao=new user_infoDAO();
 	
 	int cnt = dao.joininsert(uvo);
 	
 	if(cnt>0) {
-		request.setAttribute("nick_name", nick_name);
-		RequestDispatcher rd = request.getRequestDispatcher("join.jsp");
+		request.setAttribute("user_id",user_id);
+		RequestDispatcher rd = request.getRequestDispatcher("new_user_survey.html");
 		rd.forward(request, response);
 	}else {
 		System.out.println("회원가입 실패");
-		response.sendRedirect("Main.jsp");
+		response.sendRedirect("main.html");
 	}
 	
 	
