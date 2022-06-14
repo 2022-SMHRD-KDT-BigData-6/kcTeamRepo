@@ -7,11 +7,9 @@
 <mapper namespace="com.model.user_training_infoDAO">
 <!-- parameterType : alias 지정했는지 확인할 것 -->
 
-<select id="select_index"
-parameterType="com.model.user_training_infoVO"
-resultType="com.model.user_training_infoVO">
+<select id="select_index" resultType="int">
 select index_no from user_training_info
-where training_date = #{training_date}
+where to_char(training_date,'yy/mm/dd') = to_char(sysdate,'yy/mm/dd')
 
 </select>
 

@@ -25,11 +25,11 @@ public class user_training_infoDAO {
 	}
 
 
-	public user_training_infoVO select_index(String training_date) {
+	public int select_index() {
 		session = sqlSessionFactory.openSession(true);
-		user_training_infoVO vo = null;
+		int vo = 0;
 		try {
-			vo = session.selectOne("select_index",training_date);
+			vo = session.selectOne("select_index");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
