@@ -36,7 +36,7 @@
     <section class="u-clearfix u-section-1" id="sec-fa9b">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded-width-xs u-form u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+          <form action="reco_algo" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-select u-label-top u-form-group-1">
               <label for="select-37b4" class="u-label">운동 부위 선택</label>
               <div class="u-form-select-wrapper">

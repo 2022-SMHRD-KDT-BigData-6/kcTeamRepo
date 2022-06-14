@@ -7,18 +7,16 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.database.SqlSessionManager;
 
-public class training_infoDAO {
-
-
+public class reco_for_training_infoDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
 	SqlSession session = null;
 	int cnt = 0;
 	
-	public training_infoVO select_training_info(int training_index){
+	public List<reco_for_training_infovo> reco_training_score_init(){
 		session = sqlSessionFactory.openSession(true);
-		training_infoVO vo = null;
+		List<reco_for_training_infovo> vo = null;
 		try {
-			vo = session.selectOne("select_training_info", training_index);
+			vo = session.selectList("training_score_init");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -28,7 +26,4 @@ public class training_infoDAO {
 		
 	}
 	
-	
-	
-
 }
