@@ -8,8 +8,8 @@
 <!-- parameterType : alias 지정했는지 확인할 것 -->
 
 <select id="select_training"
-parameterType="com.model.userid_training_listVO"
-resultType="com.model.userid_training_listVO">
+resultType="com.model.userid_training_listVO"
+>
 select * from userid_training_list
 where user_id = #{user_id}
 </select>
