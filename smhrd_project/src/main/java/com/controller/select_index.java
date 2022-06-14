@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.model.user_training_infoDAO;
+import com.model.user_training_infoVO;
 
 @WebServlet("/select_index")
 public class select_index extends HttpServlet {
@@ -22,21 +23,10 @@ public class select_index extends HttpServlet {
 	
 	user_training_infoDAO dao = new user_training_infoDAO();
 	
-<<<<<<< HEAD
-	int result = dao.select_index();
-=======
 	user_training_infoVO result = dao.select_index();
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/kcTeamRepo.git
-
-	
-	System.out.println(result);
 	
 	String nextPage =null;
-<<<<<<< HEAD
-	if(result!=0) {
-=======
 	if(result != null) {
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/kcTeamRepo.git
 		nextPage = "exercise.jsp";
 	}else {
 		nextPage = "new_user_survey.jsp";

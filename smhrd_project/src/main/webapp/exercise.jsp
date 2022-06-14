@@ -33,11 +33,7 @@
   </head>
   <body data-home-page="view_recom.html" data-home-page-title="view_recom" class="u-body u-xl-mode"><header class="u-clearfix u-header" id="sec-fdc6"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
         <%
-<<<<<<< HEAD
         //List<userid_training_listVO> vo = (List<userid_training_listVO>);
-=======
-        List<userid_training_listVO> vo = (List<userid_training_listVO>);
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/kcTeamRepo.git
         //training_infoVO tvo = (training_infoVO)request.getAttribute("tvo");
         
         %>
@@ -61,24 +57,27 @@
                <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="" id="text-4500" value="개수" name="secncnt_val1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
               </div>
             </div>
-            <div class="u-align-center u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-2">
-                <div alt="" class="u-image u-image-circle u-image-2" src="" data-image-width="512" data-image-height="512"></div>
-                <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-4"><br>
+           <div class="u-align-center u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
+                <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
+                <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-5"><input type="text" placeholder="" id="text-4500" value="세트수" name="set_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="" value="세트수" id="text-4500" name="set_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
                 </p>
-                <p class="u-align-center-xs u-text u-text-6"><input type="text" placeholder="" id="text-4500" value="개수" name="secncnt_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p>
+               <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="" id="text-4500" value="개수" name="secncnt_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-3">
-                <div alt="" class="u-image u-image-circle u-image-3" src="images/male-silhouette-variant-showing-muscles.png" data-image-width="512" data-image-height="512"></div>
-                <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-7"></h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-8"><input type="text" placeholder="" id="text-4500" value="세트수" name="secncnt_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p>
-                <p class="u-align-center-xs u-text u-text-9"><input type="text" placeholder="" id="text-4500" value="개수" name="secncnt_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p>
+              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
+                <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
+                <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
+                </h5>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="" value="세트수" id="text-4500" name="set_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
+                </p>
+               <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="" id="text-4500" value="개수" name="secncnt_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
               </div>
             </div>
+           
           </div>
           <a class="u-absolute-vcenter-lg u-absolute-vcenter-md u-absolute-vcenter-sm u-absolute-vcenter-xl u-gallery-nav u-gallery-nav-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="#" role="button">
             <span aria-hidden="true">
