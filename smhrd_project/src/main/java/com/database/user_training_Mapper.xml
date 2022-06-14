@@ -10,7 +10,6 @@
 <select id="select_index" resultType="com.model.user_training_infoVO">
 select * from user_training_info
 where to_char(training_date,'yy/mm/dd') = to_char(sysdate,'yy/mm/dd')
-
 </select>
 
 

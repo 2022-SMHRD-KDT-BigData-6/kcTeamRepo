@@ -1,9 +1,13 @@
 package com.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,8 +15,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.model.reco_for_scoreTemp;
+import com.model.reco_for_training_infoDAO;
 import com.model.reco_for_training_infovo;
 import com.model.reco_for_user_survay;
+import com.model.reco_select_user_data;
+import com.model.training_infoDAO;
+import com.model.training_infoVO;
+import com.model.userid_training_listVO;
 
 /**
  * Servlet implementation class reco_algo
@@ -26,44 +35,51 @@ public class reco_algo extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		/*알고리즘 시작*/
 		List<reco_for_scoreTemp> score_lists = new ArrayList<reco_for_scoreTemp>();
-		
-	      List<reco_for_training_infovo> inVos = new ArrayList<reco_for_training_infovo>();
+		reco_for_training_infoDAO dao = new reco_for_training_infoDAO();
+	    List<reco_for_training_infovo> inVos = dao.reco_training_score_init();
 
-	      inVos.add(new reco_for_training_infovo(1, "등", "바벨", "상"));// 부위,장비,난이도
-	      inVos.add(new reco_for_training_infovo(2, "팔", "덤벨", "상"));
-	      inVos.add(new reco_for_training_infovo(3, "하체", "머신", "중"));
-	      inVos.add(new reco_for_training_infovo(4, "어깨", "바벨", "하"));
-	      inVos.add(new reco_for_training_infovo(5, "전신", "덤벨", "하"));
-	      inVos.add(new reco_for_training_infovo(6, "가슴", "바벨", "중"));
-	      inVos.add(new reco_for_training_infovo(7, "엉덩이", "바벨", "상"));
-	      inVos.add(new reco_for_training_infovo(8, "등", "덤벨", "상"));
-	      inVos.add(new reco_for_training_infovo(9, "팔", "머신", "상"));
-	      inVos.add(new reco_for_training_infovo(10, "하체", "바벨", "중"));
-	      inVos.add(new reco_for_training_infovo(11, "어깨", "덤벨", "하"));
-	      inVos.add(new reco_for_training_infovo(12, "전신", "덤벨", "중"));
-	      inVos.add(new reco_for_training_infovo(13, "가슴", "머신", "하"));
-	      inVos.add(new reco_for_training_infovo(14, "엉덩이", "바벨", "중"));
-
+	     System.out.println(inVos);
+	    	
+	     Calendar c1 = new GregorianCalendar();
+	     c1.add(Calendar.DATE, -1); // 오늘날짜로부터 -1
+	     SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd"); // 날짜 포맷
+	     String d1 = sdf.format(c1.getTime())+"%"; // String으로 저장
+		 System.out.println(d1);
+	     
+	     
+		 Calendar c2 = new GregorianCalendar();
+		 c2.add(Calendar.DATE, -2); // 오늘날짜로부터 -2
+		 String d2 = sdf.format(c2.getTime())+"%"; // String으로 저장
+		 System.out.println(d2);
+		 
+	     
 	      for (int i = 0; i < inVos.size(); i++)
 	         score_lists.add(new reco_for_scoreTemp());
 
-	      String b[] = { "어깨", "등" };// 선호부위
-	      String c[] = { "바벨", "덤벨" };// 기구
-	      String a[] = { "상", "중" };// 난이도
-	      String d[][] = { { "등", "전신" }, { "엉덩이", "하체" } };// 했던부위
-	      // 난이도, 선호부위, 비선호, 했던 운동 부위, 선호 장비
-	      reco_for_user_survay ui = new reco_for_user_survay(a, b, "가슴", d, c);
 	      
+	      reco_for_training_infoDAO yesterday_dao = new reco_for_training_infoDAO();
+
+	      String b[] = { "Shoulders", "Back" };// 선호부위
+	      String c[] = { "Barbell", "Dumbbells" };// 기구
+	      String a[] = { "Advanced", "Intermediate" };// 난이도
+	      List<String> list1 = yesterday_dao.reco_yesterday_training_parts("a", d1);
+	      List<String> list2 = yesterday_dao.reco_yesterday_training_parts("a", d2);
+	      String d[][] = { { "Back", "Legs","Arms" }, { "Hips", "Shoulders","Legs" } };
+	      // 난이도, 선호부위, 비선호, 했던 운동 부위, 선호 장비
+
+	      reco_for_user_survay ui = new reco_for_user_survay(a, b, "가슴",d,c);
+	      
+	      System.out.println(list2);
+	      System.out.println(list1);
 	    
 	      // 선호부위계산
 	      for (int i = 0; i < inVos.size(); i++) {
 
-	         if (ui.getFavor_part()[0].equals(inVos.get(i).getPart())) {
+	         if (ui.getFavor_part()[0].equals(inVos.get(i).getTraining_part())) {
 	            score_lists.get(i).setFavor_part_score(1);
-	         }else if(ui.getFavor_part()[1].equals(inVos.get(i).getPart())){
+	         }else if(ui.getFavor_part()[1].equals(inVos.get(i).getTraining_part())){
 	            score_lists.get(i).setFavor_part_score(0.8);
 	         }else {
 	             score_lists.get(i).setFavor_part_score(0.1);
@@ -72,7 +88,7 @@ public class reco_algo extends HttpServlet {
 	      // 비선호부위
 	      for (int i = 0; i < inVos.size(); i++) {
 
-	         if (ui.getHate_favor_part().equals(inVos.get(i).getPart())) {
+	         if (ui.getHate_favor_part().equals(inVos.get(i).getTraining_part())) {
 	            score_lists.get(i).setFavor_part_score(0);
 	      }
 	      }
@@ -81,9 +97,9 @@ public class reco_algo extends HttpServlet {
 	      // 기구계산
 	      for (int i = 0; i < inVos.size(); i++) {
 	         
-	         if (ui.getEq()[0].equals(inVos.get(i).getEquip())) {
+	         if (ui.getEq()[0].equals(inVos.get(i).getTraining_equip())) {
 	            score_lists.get(i).setEq_score(0.6);
-	         } else if (ui.getEq()[1].equals(inVos.get(i).getEquip())) {
+	         } else if (ui.getEq()[1].equals(inVos.get(i).getTraining_equip())) {
 	            score_lists.get(i).setEq_score(0.4);
 	         } else {
 	            score_lists.get(i).setEq_score(0.2);
@@ -92,9 +108,9 @@ public class reco_algo extends HttpServlet {
 	      // 난이도 계산
 	      for (int i = 0; i < inVos.size(); i++) {
 
-	         if (ui.getLevel()[0].equals(inVos.get(i).getDiff())) {
+	         if (ui.getLevel()[0].equals(inVos.get(i).getTraining_dif())) {
 	            score_lists.get(i).setLevel_score(0.8);
-	         } else if (ui.getLevel()[1].equals(inVos.get(i).getDiff())) {
+	         } else if (ui.getLevel()[1].equals(inVos.get(i).getTraining_dif())) {
 	            score_lists.get(i).setLevel_score(0.6);
 	         } else {
 	            score_lists.get(i).setLevel_score(0.2);
@@ -103,23 +119,24 @@ public class reco_algo extends HttpServlet {
 	      // 했던 부위
 	      
 	      for (int i = 0; i < inVos.size(); i++) {
+	          
+	          for(int j = 0; j<ui.getYesterday_part()[1].length; j++)
+	               if(ui.getYesterday_part()[1][j].equals(inVos.get(i).getTraining_part())){
+	                  score_lists.get(i).setYesterday_part_score(score_lists.get(i).getYesterday_part_score()-0.8);
+	                  break;
+	               }
+	                  
+	          
+	          for(int j = 0; j<ui.getYesterday_part()[0].length; j++)
+	             if(ui.getYesterday_part()[0][j].equals(inVos.get(i).getTraining_part())){
+	                score_lists.get(i).setYesterday_part_score(score_lists.get(i).getYesterday_part_score()-1);
+	                break;
+	             }
+	                
+	          
 	         
-	         for(int j = 0; j<ui.getYesterday_part()[1].length; j++)
-	              if(ui.getYesterday_part()[1][j].equals(inVos.get(i).getPart())){
-	                 score_lists.get(i).setYesterday_part_score(score_lists.get(i).getYesterday_part_score()-0.8);
-	                 break;
-	              }
-	                 
-	         
-	         for(int j = 0; j<ui.getYesterday_part()[0].length; j++)
-	            if(ui.getYesterday_part()[0][j].equals(inVos.get(i).getPart())){
-	               score_lists.get(i).setYesterday_part_score(score_lists.get(i).getYesterday_part_score()-1);
-	               break;
-	            }
-	               
-	         
-	        
-	      }
+	       }
+
 	      // for 끝
 	      System.out.println("부위가중치:");
 	      for (int i = 0; i < score_lists.size(); i++) {
@@ -147,9 +164,9 @@ public class reco_algo extends HttpServlet {
 	         for (int j = 0; j < i; j++) {      
 	            if (inVos.get(j).getScore() > inVos.get(i).getScore() ) { 
 	               
-	               int temp = inVos.get(j).getIndex() ;             
-	               inVos.get(j).setIndex(inVos.get(i).getIndex());             
-	               inVos.get(i).setIndex(temp);   
+	               int temp = inVos.get(j).getTraining_index() ;             
+	               inVos.get(j).setTraining_index(inVos.get(i).getTraining_index());        
+	               inVos.get(i).setTraining_index(temp);  
 	               double temp_sc = inVos.get(j).getScore();             
 	               inVos.get(j).setScore(inVos.get(i).getScore());             
 	               inVos.get(i).setScore(temp_sc); 
@@ -157,13 +174,20 @@ public class reco_algo extends HttpServlet {
 	            } 
 	         }
 	      }
-
+	      List<Integer> q = new ArrayList<Integer>();
+	      
 	      System.out.println("정렬 후");
 	      for (int i = inVos.size(); i > inVos.size()-3; i--) {
-	         System.out.print(inVos.get(i-1).getIndex()+":"+inVos.get(i-1).getScore()+"\t");
-
-		
+	         System.out.print(inVos.get(i-1).getTraining_index()+":"+inVos.get(i-1).getScore()+"\t");
+     	
+	         q.add(inVos.get(i-1).getTraining_index());
+	  
 	}
+	      
+	      request.setAttribute("q", q);
+	  	
+	  	RequestDispatcher rd = request.getRequestDispatcher("surveyinsert");
+	  	rd.forward(request, response);   
 
 	}
 }

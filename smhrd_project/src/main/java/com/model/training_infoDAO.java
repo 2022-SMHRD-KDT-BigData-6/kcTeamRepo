@@ -27,6 +27,8 @@ public class training_infoDAO {
 		return vo;
 		
 	}
-
+	
+	
+	
 
 }

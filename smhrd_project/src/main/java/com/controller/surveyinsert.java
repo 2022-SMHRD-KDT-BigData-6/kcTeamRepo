@@ -28,11 +28,11 @@ public class surveyinsert extends HttpServlet {
 	int set_val = Integer.parseInt(request.getParameter("set_val"));
 	String secncnt_val = request.getParameter("secncnt_val");
 	
+	int training_index = (int) request.getAttribute("q");
 	
 	user_training_infoVO vo = new user_training_infoVO();
-	index_no
 	vo.setUser_id(user_id);
-	training_index
+	vo.setTraining_index(training_index);
 	vo.setSet_val(set_val);
 	vo.setSecncnt_val(secncnt_val);
 		
