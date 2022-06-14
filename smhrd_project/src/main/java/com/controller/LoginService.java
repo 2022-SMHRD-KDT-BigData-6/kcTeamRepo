@@ -34,6 +34,9 @@ public class LoginService extends HttpServlet {
 		
 		user_infoVO result = dao.login(uvo);
 		
+		System.out.println(result.toString());
+		
+		
 		if(result != null) {
 			System.out.println("로그인 성공");
 			
