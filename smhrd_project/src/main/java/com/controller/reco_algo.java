@@ -29,7 +29,8 @@ public class reco_algo extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		String s = (String)request.getParameter("Item 1");
+		System.out.println(s);
 		/*알고리즘 시작*/
 		List<reco_for_scoreTemp> score_lists = new ArrayList<reco_for_scoreTemp>();
 		reco_for_training_infoDAO dao = new reco_for_training_infoDAO();

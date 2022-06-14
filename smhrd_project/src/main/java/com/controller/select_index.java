@@ -24,9 +24,6 @@ public class select_index extends HttpServlet {
 	user_training_infoDAO dao = new user_training_infoDAO();
 	
 	user_training_infoVO result = dao.select_index();
-
-	
-	System.out.println(result);
 	
 	String nextPage =null;
 	if(result != null) {

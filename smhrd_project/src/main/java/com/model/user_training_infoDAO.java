@@ -39,6 +39,4 @@ public class user_training_infoDAO {
 	}
 
 	
-	
-	
 }

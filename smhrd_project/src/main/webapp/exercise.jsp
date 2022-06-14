@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="nicepage.css" media="screen">
     <link rel="stylesheet" href="exercise.css" media="screen">
     <link rel="stylesheet" href="view_recom.css" media="screen">
-    
 <link rel="stylesheet" href="view_recom.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <!-- <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> -->
@@ -35,8 +34,6 @@
   <body data-home-page="view_recom.html" data-home-page-title="view_recom" class="u-body u-xl-mode"><header class="u-clearfix u-header" id="sec-fdc6"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
         <%
         List<userid_training_listVO> vo = null;
-        //training_infoVO tvo = (training_infoVO)request.getAttribute("tvo");
-        
         %>
         
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="512" data-image-height="512">
@@ -52,30 +49,33 @@
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
                 <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
-                <%=vo.get(0).getTraining_name()%></h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><%=vo.get(0).getSet_val()%>세트<br>
-                </p>
-                <p class="u-align-center-xs u-text u-text-3"><%=vo.get(0).getSecncnt_val() %>회</p>
-              </div>
-            </div>
-            <div class="u-align-center u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-2">
-                <div alt="" class="u-image u-image-circle u-image-2" src="" data-image-width="512" data-image-height="512"></div>
-                <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-4"><%=vo.get(1).getTraining_name() %><br>
                 </h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-5"><%=vo.get(1).getSet_val() %>세트<br>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="" value="세트수" id="text-4500" name="set_val1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
                 </p>
-                <p class="u-align-center-xs u-text u-text-6"><%=vo.get(1).getSecncnt_val() %>회</p>
+               <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="" id="text-4500" value="개수" name="secncnt_val1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
+              </div>
+            </div>
+           <div class="u-align-center u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
+                <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
+                <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
+                </h5>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="" value="세트수" id="text-4500" name="set_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
+                </p>
+               <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="" id="text-4500" value="개수" name="secncnt_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-3">
-                <div alt="" class="u-image u-image-circle u-image-3" src="images/male-silhouette-variant-showing-muscles.png" data-image-width="512" data-image-height="512"></div>
-                <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-7"><%=vo.get(2).getTraining_name() %></h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-8"><%=vo.get(2).getSet_val() %>세트</p>
-                <p class="u-align-center-xs u-text u-text-9"><%=vo.get(2).getSecncnt_val() %>회</p>
+              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
+                <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
+                <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
+                </h5>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="" value="세트수" id="text-4500" name="set_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
+                </p>
+               <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="" id="text-4500" value="개수" name="secncnt_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
               </div>
             </div>
+           
           </div>
           <a class="u-absolute-vcenter-lg u-absolute-vcenter-md u-absolute-vcenter-sm u-absolute-vcenter-xl u-gallery-nav u-gallery-nav-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="#" role="button">
             <span aria-hidden="true">
