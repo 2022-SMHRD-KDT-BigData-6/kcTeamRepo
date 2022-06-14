@@ -25,5 +25,6 @@
     <mapper resource="com/database/userid_training_Mapper.xml"/>
     <mapper resource="com/database/user_training_Mapper.xml"/>
     <mapper resource="com/database/reco_mapper.xml"/>
+    <mapper resource="com/database/training_info_Mapper.xml"/>
   </mappers>
 </configuration>
