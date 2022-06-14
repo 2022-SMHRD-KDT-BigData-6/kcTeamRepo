@@ -69,8 +69,8 @@ public class reco_algo extends HttpServlet {
 
 	      reco_for_user_survay ui = new reco_for_user_survay(a, b, "가슴",d,c);
 	      
-	      System.out.println(list1);
 	      System.out.println(list2);
+	      System.out.println(list1);
 	    
 	      // 선호부위계산
 	      for (int i = 0; i < inVos.size(); i++) {
