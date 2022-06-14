@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 
 public class user_training_infoVO {
 	private int index_no;
+	private String user_id;
 	private int training_index;
 	private int set_val;
 	private String secncnt_val;

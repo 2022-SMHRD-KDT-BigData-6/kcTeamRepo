@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="nicepage.css" media="screen">
     <link rel="stylesheet" href="exercise.css" media="screen">
     <link rel="stylesheet" href="view_recom.css" media="screen">
+    <link rel="stylesheet" href="new_user.css" media="screen">
 <link rel="stylesheet" href="view_recom.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <!-- <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> -->
@@ -46,39 +47,54 @@
     <section class="u-clearfix u-grey-10 u-section-1" id="sec-f395">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
         <div class="u-expanded-width u-layout-horizontal u-list u-list-1">
+          
+          
+          <form action="surveyinsert">
+          
+            
           <div class="u-repeater u-repeater-1">
+            
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
                 <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="" value="세트수" id="text-4500" name="set_val1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="세트수" id="text-4500" name="set_val1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
                 </p>
-               <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="" id="text-4500" value="개수" name="secncnt_val1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
-              </div>
+               <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="개수" id="text-4500" name="secncnt_val1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p>
+               <br>
+               </div>
+           
+          
             </div>
            <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
                 <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="" value="세트수" id="text-4500" name="set_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="세트수" id="text-4500" name="set_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
                 </p>
-               <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="" id="text-4500" value="개수" name="secncnt_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
+               <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="개수" id="text-4500" name="secncnt_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
               </div>
             </div>
+            
+            
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
                 <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="" value="세트수" id="text-4500" name="set_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="세트수" id="text-4500" name="set_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
                 </p>
-               <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="" id="text-4500" value="개수" name="secncnt_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
+               <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="개수" id="text-4500" name="secncnt_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
               </div>
             </div>
            
           </div>
+          
+          <input type="submit" value="저장" class="u-btn u-btn-submit u-button-style" style="position:fixed; left:210px; bottom:20s0px; transform : translate(-50%, -50%) ">
+        
+          </form>
           <a class="u-absolute-vcenter-lg u-absolute-vcenter-md u-absolute-vcenter-sm u-absolute-vcenter-xl u-gallery-nav u-gallery-nav-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="#" role="button">
             <span aria-hidden="true">
               <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
