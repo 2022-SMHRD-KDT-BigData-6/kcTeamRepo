@@ -36,12 +36,13 @@
     <section class="u-clearfix u-section-1" id="sec-fa9b">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded-width-xs u-form u-form-1">
+        
           <form action="reco_algo" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-select u-label-top u-form-group-1">
               <label for="select-37b4" class="u-label">운동 부위 선택</label>
               <div class="u-form-select-wrapper">
                 <select id="select-37b4" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option name = "Item 1">팔</option>
+                  <option value="Item 1">팔</option>
                   <option value="Item 2">등</option>
                   <option value="Item 3">엉덩이</option>
                   <option value="Item 4">하체</option>
@@ -105,7 +106,7 @@
               </div>
             </div>
           
-            
+
            
             <div class="u-align-left u-form-group u-form-submit u-label-top">
               <input type="submit" value="submit" class="u-form-control-hidden">

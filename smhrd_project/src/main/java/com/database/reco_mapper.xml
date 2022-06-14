@@ -13,4 +13,11 @@ select training_index , training_part,training_equip,training_dif
 from training_info
 </select>
 
+<select id="reco_yesterday_training_parts" parameterType="com.model.reco_select_user_data" resultType="String">
+	select ti.training_part 
+	from training_info ti join userid_training_list utl 
+	on ti.training_name = utl.training_name 
+	where to_char(utl.training_date,'yy/mm/dd') like #{training_date} and utl.user_id=#{user_id}
+</select>
+
 </mapper>
