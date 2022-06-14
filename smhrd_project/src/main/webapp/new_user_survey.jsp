@@ -36,7 +36,12 @@
     <section class="u-clearfix u-section-1" id="sec-fa9b">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded-width-xs u-form u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+<<<<<<< HEAD
+          <form action="main.html" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+=======
+        
+          <form action="reco_algo" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/kcTeamRepo.git
             <div class="u-form-group u-form-select u-label-top u-form-group-1">
               <label for="select-37b4" class="u-label">운동 부위 선택</label>
               <div class="u-form-select-wrapper">
@@ -78,6 +83,18 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
             </div>
+             <div class="u-form-group u-form-select u-label-top u-form-group-2">
+              <label for="select-0e21" class="u-label">운동 기구 선택2</label>
+              <div class="u-form-select-wrapper">
+                <select id="select-0e21" name="select-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <option value="Item 28">바벨</option>
+                  <option value="Item 29">덤벨</option>
+                  <option value="Item 30">머신</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+              </div>
+            </div>
+            
             <div class="u-form-group u-form-select u-label-top u-form-group-3">
               <label for="select-3739" class="u-label">운동 난이도 선택</label>
               <div class="u-form-select-wrapper">
@@ -89,6 +106,18 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
             </div>
+            <div class="u-form-group u-form-select u-label-top u-form-group-3">
+              <label for="select-3739" class="u-label">운동 난이도 선택2</label>
+              <div class="u-form-select-wrapper">
+                <select id="select-3739" name="select-2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <option value="Item 11">Beginner</option>
+                  <option value="Item 12">Intermediate</option>
+                  <option value="Item 13">Advanced</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+              </div>
+            </div>
+            
             <div class="u-form-group u-form-select u-label-top u-form-group-4">
               <label for="select-4771" class="u-label">비선호 부위 선택</label>
               <div class="u-form-select-wrapper">
@@ -105,11 +134,11 @@
               </div>
             </div>
           
-            
+
            
             <div class="u-align-left u-form-group u-form-submit u-label-top">
               <input type="submit" value="submit" class="u-form-control-hidden">
-              <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
+              <a href="main.html" class="u-btn u-btn-submit u-button-style">Submit</a>
             </div>
             <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
             <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
