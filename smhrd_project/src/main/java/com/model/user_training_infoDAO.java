@@ -25,7 +25,11 @@ public class user_training_infoDAO {
 	}
 
 
+<<<<<<< HEAD
 	public int select_index() {
+=======
+	public user_training_infoVO select_index() {
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/kcTeamRepo.git
 		session = sqlSessionFactory.openSession(true);
 		int vo = 0;
 		try {

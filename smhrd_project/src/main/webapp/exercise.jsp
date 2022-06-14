@@ -33,7 +33,11 @@
   </head>
   <body data-home-page="view_recom.html" data-home-page-title="view_recom" class="u-body u-xl-mode"><header class="u-clearfix u-header" id="sec-fdc6"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
         <%
+<<<<<<< HEAD
         //List<userid_training_listVO> vo = (List<userid_training_listVO>);
+=======
+        List<userid_training_listVO> vo = (List<userid_training_listVO>);
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/kcTeamRepo.git
         //training_infoVO tvo = (training_infoVO)request.getAttribute("tvo");
         
         %>
