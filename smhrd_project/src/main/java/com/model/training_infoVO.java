@@ -16,4 +16,10 @@ public class training_infoVO {
 	private String training_part;
 	private String training_equip;
 	private String training_dif;
+	
+	
+	training_infoVO(String training_part){
+		this.training_part = training_part;
+	}
+	
 }

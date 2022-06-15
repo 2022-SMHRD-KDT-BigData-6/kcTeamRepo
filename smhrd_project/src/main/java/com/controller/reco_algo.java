@@ -40,20 +40,7 @@ public class reco_algo extends HttpServlet {
 		reco_for_training_infoDAO dao = new reco_for_training_infoDAO();
 	    List<reco_for_training_infovo> inVos = dao.reco_training_score_init();
 
-	     System.out.println(inVos);
-	    	
-	     Calendar c1 = new GregorianCalendar();
-	     c1.add(Calendar.DATE, -1); // 오늘날짜로부터 -1
-	     SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd"); // 날짜 포맷
-	     String d1 = sdf.format(c1.getTime())+"%"; // String으로 저장
-		 System.out.println(d1);
-	     
-	     
-		 Calendar c2 = new GregorianCalendar();
-		 c2.add(Calendar.DATE, -2); // 오늘날짜로부터 -2
-		 String d2 = sdf.format(c2.getTime())+"%"; // String으로 저장
-		 System.out.println(d2);
-		 
+	     System.out.println(inVos);	    	
 	     
 	      for (int i = 0; i < inVos.size(); i++)
 	         score_lists.add(new reco_for_scoreTemp());
@@ -64,15 +51,21 @@ public class reco_algo extends HttpServlet {
 	      String b[] = { "Shoulders", "Back" };// 선호부위
 	      String c[] = { "Barbell", "Dumbbells" };// 기구
 	      String a[] = { "Advanced", "Intermediate" };// 난이도
-	      List<String> list1 = yesterday_dao.reco_yesterday_training_parts("a", d1);
-	      List<String> list2 = yesterday_dao.reco_yesterday_training_parts("a", d2);
-	      String d[][] = { { "Back", "Legs","Arms" }, { "Hips", "Shoulders","Legs" } };
+	      List<String> list1 = yesterday_dao.reco_one_yesterday_training_parts("a");
+	      List<String> list2 = yesterday_dao.reco_two_yesterday_training_parts("a");
+	      
+	      //String d[][] = { { "Back", "Legs","Arms" }, { "Hips", "Shoulders","Legs" } };
 	      // 난이도, 선호부위, 비선호, 했던 운동 부위, 선호 장비
 
-	      reco_for_user_survay ui = new reco_for_user_survay(a, b, "가슴",d,c);
 	      
-	      System.out.println(list2);
-	      System.out.println(list1);
+	     String[][] d = new String[2][3];
+	     
+	     for(int i =0; i<3; i++) {
+	    	 d[0][i] = list1.get(i);
+	    	 d[1][i] = list2.get(i);
+	     }
+	      
+	      reco_for_user_survay ui = new reco_for_user_survay(a, b, "가슴",d,c);    
 	    
 	      // 선호부위계산
 	      for (int i = 0; i < inVos.size(); i++) {
@@ -174,20 +167,33 @@ public class reco_algo extends HttpServlet {
 	            } 
 	         }
 	      }
+	      
+	      //추천 운동 명 저장
+	      List<String> reco_training = new ArrayList<String>();
+	      training_infoDAO training_info_dao = new training_infoDAO();
+	      List<Integer> index = new ArrayList<Integer>();
+	      
+	      training_infoVO reco_training_name_buf = new training_infoVO();
+	      
+	      
 	      List<Integer> q = new ArrayList<Integer>();
 	      
 	      System.out.println("정렬 후");
 	      for (int i = inVos.size(); i > inVos.size()-3; i--) {
 	         System.out.print(inVos.get(i-1).getTraining_index()+":"+inVos.get(i-1).getScore()+"\t");
-     	
+		    System.out.println(training_info_dao.select_training_name(inVos.get(i-1).getTraining_index()));
+
 	         q.add(inVos.get(i-1).getTraining_index());
 	  
-	}
+	      }
+	      
+	      System.out.println(q);
 	      
 	      request.setAttribute("q", q);
 	  	
 	  	RequestDispatcher rd = request.getRequestDispatcher("surveyinsert");
 	  	rd.forward(request, response);   
-
+	     
+	      
 	}
 }

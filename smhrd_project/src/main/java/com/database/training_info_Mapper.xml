@@ -15,4 +15,13 @@ where training_index = #{training_index}
 </select>
 
 
+<select id="select_training_name"
+parameterType="int"
+resultType="String">
+select training_name 
+from training_info
+where training_index = #{training_index}
+</select>
+
+
 </mapper>

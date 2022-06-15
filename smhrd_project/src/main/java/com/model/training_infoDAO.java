@@ -30,5 +30,20 @@ public class training_infoDAO {
 	
 	
 	
+	public String select_training_name(int training_index){
+		session = sqlSessionFactory.openSession(true);
+		String vo = null;
+		try {
+			vo = session.selectOne("select_training_name", training_index);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+		
+		return vo;
+		
+	}
+	
+	
 
 }
