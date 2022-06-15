@@ -26,15 +26,28 @@ public class reco_for_training_infoDAO {
 		
 	}
 	
-	public List<String> reco_yesterday_training_parts(String user_id, String training_date){
+	public List<String> reco_one_yesterday_training_parts(String user_id){
 		session = sqlSessionFactory.openSession(true);
 		List<String> vo = null;
-		reco_select_user_data user_data = new reco_select_user_data(user_id, training_date);
-		System.out.println(user_data.getTraining_date());
-		System.out.println(user_data.getUser_id());
 		
 		try {
-			vo = session.selectList("reco_yesterday_training_parts",user_data);
+			vo = session.selectList("reco_one_yesterday_training_parts",user_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+		
+		return vo;
+		
+	}
+	
+	
+	public List<String> reco_two_yesterday_training_parts(String user_id){
+		session = sqlSessionFactory.openSession(true);
+		List<String> vo = null;
+		
+		try {
+			vo = session.selectList("reco_two_yesterday_training_parts",user_id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

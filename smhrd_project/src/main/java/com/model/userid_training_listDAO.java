@@ -24,6 +24,19 @@ public class userid_training_listDAO {
 		session.close();
 		
 		return vo;
+	}
+	
+	public List<userid_training_listVO> select_training_byId(userid_training_listVO vo){
+		session = sqlSessionFactory.openSession(true);
+		List<userid_training_listVO> resultvo = null;
+		try {
+			resultvo = session.selectList("cal", vo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+		
+		return resultvo;
 		
 	}
 }

@@ -8,12 +8,22 @@
 <!-- parameterType : alias 지정했는지 확인할 것 -->
 
 <select id="select_training"
-parameterType="com.model.userid_training_listVO"
-resultType="com.model.userid_training_listVO">
+resultType="com.model.userid_training_listVO"
+>
 select * from userid_training_list
 where user_id = #{user_id}
 </select>
 
+<!-- 진석이 추가한 코드 -->
+<select id="cal" 
+resultType="com.model.userid_training_listVO"
+parameterType="com.model.userid_training_listVO">
+select training_name,set_val,secncnt_val
+from userid_training_list 
+where training_date LIKE to_date(#{training_date},'YY/MM/DD')
+and user_id = #{user_id}
+
+</select>
 
 
 
