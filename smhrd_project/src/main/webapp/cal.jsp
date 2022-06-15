@@ -83,6 +83,7 @@
             <section class="u-border-2 u-border-grey-75 u-clearfix u-section-1" id="sec-98d0">
                 <div class="u-clearfix u-sheet u-sheet-1">
                   <div class="u-expanded-width u-list u-list-1">
+                    <a href="detail.jsp">
                     <div class="u-repeater u-repeater-1">
                       <div class="u-container-style u-list-item u-repeater-item">
                         <div class="u-container-layout u-similar-container u-container-layout-1">
@@ -103,6 +104,7 @@
                         </div>
                       </div>
                     </div>
+                    </a>
                   </div>
                 </div>
               </section>

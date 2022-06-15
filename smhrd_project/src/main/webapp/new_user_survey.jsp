@@ -36,12 +36,8 @@
     <section class="u-clearfix u-section-1" id="sec-fa9b">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded-width-xs u-form u-form-1">
-<<<<<<< HEAD
-          <form action="main.html" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
-=======
         
           <form action="reco_algo" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/kcTeamRepo.git
             <div class="u-form-group u-form-select u-label-top u-form-group-1">
               <label for="select-37b4" class="u-label">운동 부위 선택</label>
               <div class="u-form-select-wrapper">
@@ -138,7 +134,7 @@
            
             <div class="u-align-left u-form-group u-form-submit u-label-top">
               <input type="submit" value="submit" class="u-form-control-hidden">
-              <a href="main.html" class="u-btn u-btn-submit u-button-style">Submit</a>
+              <a href="exercise.jsp" class="u-btn u-btn-submit u-button-style">Submit</a>
             </div>
             <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
             <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>

@@ -11,9 +11,6 @@ import javax.servlet.http.HttpSession;
 import com.model.user_infoDAO;
 import com.model.user_infoVO;
 
-/**
- * Servlet implementation class LoginService2
- */
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
