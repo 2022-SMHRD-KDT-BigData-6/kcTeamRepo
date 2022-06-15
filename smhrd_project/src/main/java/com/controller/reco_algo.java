@@ -198,7 +198,6 @@ public class reco_algo extends HttpServlet {
 	  
 	      }
 	      
-	      System.out.println(q);
 	      
 	    request.setAttribute("q", q);
 	  	

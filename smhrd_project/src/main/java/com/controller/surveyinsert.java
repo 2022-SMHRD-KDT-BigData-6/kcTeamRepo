@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import com.model.reco_for_training_infovo;
 import com.model.user_infoVO;
@@ -23,10 +25,14 @@ public class surveyinsert extends HttpServlet {
 	request.setCharacterEncoding("UTF-8");
 	
 	HttpSession session = request.getSession();
+	
+	List<Integer> q = (List<Integer>) session.getAttribute("q");
 	user_infoVO uservo =(user_infoVO)session.getAttribute("uvo");
 	//user_training_infoVO q = (user_training_infoVO) request.getAttribute("q");
 	
-    //int training_index = q.getTraining_index();
+    int training_index1 = q.get(0);
+    int training_index2 = q.get(1);
+    int training_index3 = q.get(2);
 	String user_id = uservo.getUser_id();
 	
 	int set_val1 = Integer.parseInt(request.getParameter("set_val1"));
@@ -39,19 +45,19 @@ public class surveyinsert extends HttpServlet {
 	String secncnt_val3 = request.getParameter("secncnt_val3");
 	
 	user_training_infoVO vo1 = new user_training_infoVO();
-	//vo1.setTraining_index(training_index);
+	vo1.setTraining_index(training_index1);
 	vo1.setUser_id(user_id);
 	vo1.setSet_val(set_val1);
 	vo1.setSecncnt_val(secncnt_val1);
 	
 	user_training_infoVO vo2 = new user_training_infoVO();
-	//vo2.setTraining_index(training_index);
+	vo2.setTraining_index(training_index2);
 	vo2.setUser_id(user_id);
 	vo2.setSet_val(set_val2);
 	vo2.setSecncnt_val(secncnt_val2);
 	
 	user_training_infoVO vo3 = new user_training_infoVO();
-	//vo3.setTraining_index(training_index);
+	vo3.setTraining_index(training_index3);
 	vo3.setUser_id(user_id);
 	vo3.setSet_val(set_val3);
 	vo3.setSecncnt_val(secncnt_val3);

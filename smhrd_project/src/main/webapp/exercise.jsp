@@ -21,11 +21,10 @@
     <!-- <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> -->
     <meta name="generator" content="Nicepage 4.12.14, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <%
-    List<Integer> q = (List<Integer>)request.getAttribute("q");
-    
-    
-    %>
+<%
+ List<Integer> q = (List<Integer>)request.getAttribute("q");
+ session.setAttribute("q", q);
+%>
 
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -62,7 +61,9 @@
                 <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="세트수" id="text-4500" name="set_val1" class="u-border-1 u-border-grey-30 u-input u-input-dngle u-white"><br>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2">
+                <h3><%=q.get(0) %> </h3>
+                <input type="text" placeholder="세트수" id="text-4500" name="set_val1" class="u-border-1 u-border-grey-30 u-input u-input-dngle u-white"><br>
                 </p>
                <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="개수" id="text-4500" name="secncnt_val1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p>
                <br>
@@ -75,7 +76,9 @@
                 <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="세트수" id="text-4500" name="set_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2">
+                <h3><%=q.get(1) %> </h3>
+                <input type="text" placeholder="세트수" id="text-4500" name="set_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
                 </p>
                <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="개수" id="text-4500" name="secncnt_val2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
               </div>
@@ -87,7 +90,9 @@
                 <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="세트수" id="text-4500" name="set_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2">
+                <h3><%=q.get(2) %> </h3>
+                <input type="text" placeholder="세트수" id="text-4500" name="set_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
                 </p>
                <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="개수" id="text-4500" name="secncnt_val3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p> 
               </div>
