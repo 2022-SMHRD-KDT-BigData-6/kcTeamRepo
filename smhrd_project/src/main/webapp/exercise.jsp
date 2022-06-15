@@ -57,7 +57,7 @@
                 <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
-                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="세트수" id="text-4500" name="set_val1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><br>
+                <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2"><input type="text" placeholder="세트수" id="text-4500" name="set_val1" class="u-border-1 u-border-grey-30 u-input u-input-dngle u-white"><br>
                 </p>
                <p class="u-align-center-xs u-text u-text-3"><input type="text" placeholder="개수" id="text-4500" name="secncnt_val1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></p>
                <br>
@@ -90,7 +90,7 @@
            
           </div>
           
-          <input type="submit" value="저장" class="u-btn u-btn-submit u-button-style" style="position:fixed; left:210px; bottom:20s0px; transform : translate(-50%, -50%) ">
+          <input type="submit" value="저장" class="u-btn u-btn-submit u-button-style" style="position:fixed; left:210px; bottom:200px; transform : translate(-50%, -50%) ">
         
           </form>
           <a class="u-absolute-vcenter-lg u-absolute-vcenter-md u-absolute-vcenter-sm u-absolute-vcenter-xl u-gallery-nav u-gallery-nav-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="#" role="button">
