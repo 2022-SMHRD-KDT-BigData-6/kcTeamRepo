@@ -40,6 +40,9 @@ public class reco_algo extends HttpServlet {
 		reco_for_training_infoDAO dao = new reco_for_training_infoDAO();
 	    List<reco_for_training_infovo> inVos = dao.reco_training_score_init();
 
+	    
+	    
+	    
 	     System.out.println(inVos);	    	
 	     
 	      for (int i = 0; i < inVos.size(); i++)
@@ -47,14 +50,22 @@ public class reco_algo extends HttpServlet {
 
 	      
 	      reco_for_training_infoDAO yesterday_dao = new reco_for_training_infoDAO();
-
-	      String b[] = { "Shoulders", "Back" };// 선호부위
-	      String c[] = { "Barbell", "Dumbbells" };// 기구
-	      String a[] = { "Advanced", "Intermediate" };// 난이도
+	      
+	      String favor_part1 = request.getParameter("parts1");
+	      String favor_part2 = request.getParameter("parts2");
+	      String equip1 = request.getParameter("equip1");
+	      String equip2 = request.getParameter("equip2");
+	      String dif1 = request.getParameter("dif1");
+	      String dif2 = request.getParameter("dif2");
+	      String hatepart = request.getParameter("hateparts");
+	      
+	      
+	      String b[] = { favor_part1, favor_part2 };// 선호부위
+	      String c[] = { equip1, equip2 };// 기구
+	      String a[] = { dif1, dif2 };// 난이도
 	      List<String> list1 = yesterday_dao.reco_one_yesterday_training_parts("a");
 	      List<String> list2 = yesterday_dao.reco_two_yesterday_training_parts("a");
 	      
-	      //String d[][] = { { "Back", "Legs","Arms" }, { "Hips", "Shoulders","Legs" } };
 	      // 난이도, 선호부위, 비선호, 했던 운동 부위, 선호 장비
 
 	      
@@ -65,7 +76,7 @@ public class reco_algo extends HttpServlet {
 	    	 d[1][i] = list2.get(i);
 	     }
 	      
-	      reco_for_user_survay ui = new reco_for_user_survay(a, b, "가슴",d,c);    
+	      reco_for_user_survay ui = new reco_for_user_survay(a, b, hatepart,d,c);    
 	    
 	      // 선호부위계산
 	      for (int i = 0; i < inVos.size(); i++) {
@@ -180,20 +191,21 @@ public class reco_algo extends HttpServlet {
 	      
 	      System.out.println("정렬 후");
 	      for (int i = inVos.size(); i > inVos.size()-3; i--) {
-	         System.out.print(inVos.get(i-1).getTraining_index()+":"+inVos.get(i-1).getScore()+"\t");
+	        System.out.print(inVos.get(i-1).getTraining_index()+":"+inVos.get(i-1).getScore()+"\t");
 		    System.out.println(training_info_dao.select_training_name(inVos.get(i-1).getTraining_index()));
 
-	         q.add(inVos.get(i-1).getTraining_index());
+	        q.add(inVos.get(i-1).getTraining_index());
 	  
 	      }
 	      
 	      System.out.println(q);
 	      
-	      request.setAttribute("q", q);
+	    request.setAttribute("q", q);
 	  	
-	  	RequestDispatcher rd = request.getRequestDispatcher("surveyinsert");
+	  	RequestDispatcher rd = request.getRequestDispatcher("exercise.jsp");
 	  	rd.forward(request, response);   
 	     
+	      
 	      
 	}
 }

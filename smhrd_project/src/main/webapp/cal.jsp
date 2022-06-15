@@ -1,3 +1,4 @@
+<%@page import="com.model.user_infoVO"%>
 <%@page import="com.model.usertlVO"%>
 <%@page import="com.model.memberTDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
@@ -27,10 +28,10 @@
 
     <script type="application/ld+json">
     {
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"logo": "images/default-logo.png"
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "",
+      "logo": "images/default-logo.png"
     }
     </script>
     <meta name="theme-color" content="#478ac9">
@@ -40,19 +41,6 @@
 
 <body class="u-body u-xl-mode">
     <header class="u-clearfix u-header u-header" id="sec-be5f">
-    <%
-    //String user_id = "";
-	userid_training_listDAO idao = new userid_training_listDAO();
-	List<userid_training_listVO> userTrainingList =  idao.select_training("a");
-	// 페이지에 출력하기
-
-	
-	
-	%>
-	
-
-	
-    
    
         <div class="u-clearfix u-sheet u-sheet-1">
 
@@ -108,26 +96,12 @@
                   </div>
                 </div>
               </section>
-              
-            
-            
-           
-            <script>
-                recom = document.querySelector('.recom');
-                // 여기에 추천해준 3개의 db 데이터를 가져와서 넣어준다.
-                for(var i = 0; i <= 3; i++) {
-                    recom.innerHTML('<div class="recom">'+ "여기는 div"+ i +'</div>')
-                }
-            </script>
-
+                 
             <script 
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
             crossorigin="anonymous">
             </script>
-            
-          
-            
             
             
             <script>
@@ -218,6 +192,74 @@
                             var currentMonthDate = document.querySelectorAll('.dates .current');
                             currentMonthDate[todayDate - 1].classList.add('today');
                         }
+                        
+                     // 날짜 클릭했을 때
+                        $('.day').click(function () {
+                        // function
+     
+                        $(".day").removeClass("today");
+                        $(this).removeClass("today").addClass("today");
+                        $("u-repeater u-repeater-1").removeClass("u-repeater u-repeater-1");
+                        
+                       
+                        let data2 = $("div.year-month").text();
+                        data2 = data2.split('.');
+                        let data = $(this).text();
+                     let result = data2[0]+'/'+data2[1]+'/'+data;
+                     
+                     console.log(result)
+                     
+                        
+                        //console.log(day_current_today[]);
+                        // 클릭하면 src 이미지 경로를 그날 했던 운동 정보이름이랑 같은걸 다 가져와서 보여주기
+                        // src="./images/bar/Deadlift-2.jpg"
+                        
+                        //클릭할 때 마다 비동기식 통신방식(ajax)을 사용해서 cal.java파일로 데이터 요청
+                        // cal.java로 보내줘야하는 데이터 : result(날짜)
+                        // list --> json구조로 받아오는게 가장 사용하기 편해요.
+                        $.ajax({
+                   // 요청할 서버의 url
+                      url : "cal",
+                      type : "GET",
+                      // 반드시 키값을 달아서 데이터를 전송해줄것
+                      //"data =" 띄어쓰기 ㄴㄴ
+                      //data : "data="+data,
+                      data : "data="+result,
+                      // 받아올 결과값의 자료형을 지정하기
+                      dataType : 'json',
+                      success : function(res) {
+                         console.log(res);
+                         
+                         
+                         //console.log('성공!');
+                         // 하단에 res안에 들어있는 데이터가 출력될 수 있게끔 
+                      
+                      
+                         if(res.length==0){
+                            $('.u-text-1').html('<span>'+"운동기록이없습니다."+'</span>')
+                            $('.u-text-2').html('<span>'+"운동기록이없습니다."+'</span>')
+                            $('.u-text-3').html('<span>'+"운동기록이없습니다."+'</span>')
+                         }else{
+                            $('.u-text-1').html('<span>'+"운동이름 :"+res[0].training_name+"세트 회수 : "+ res[0].set_val+"회수/시간(초) :"+res[0].secncnt_val+'</span>')        
+                            $('.u-text-2').html('<span>'+"운동이름 :"+res[1].training_name+"세트 회수 : "+ res[1].set_val+"회수/시간(초) :"+res[1].secncnt_val+'</span>')        
+                            $('.u-text-3').html('<span>'+"운동이름 :"+res[2].training_name+"세트 회수 : "+ res[2].set_val+"회수/시간(초) :"+res[2].secncnt_val+'</span>')        
+                               
+                         }
+                         
+                
+                         
+                   },
+                      error : function() {
+                      alert('요청실패!');
+                   }
+
+                });
+
+                        
+                        });
+                        
+
+                        
                     }
 
                     // 이전달로 이동
@@ -235,73 +277,6 @@
 
                     
                     
-                    
-                    // 날짜 클릭했을 때
-                    $('.day').click(function () {
-                    // function
- 
-                    $(".day").removeClass("today");
-                    $(this).removeClass("today").addClass("today");
-                    $("u-repeater u-repeater-1").removeClass("u-repeater u-repeater-1");
-                    
-                   
-                    let data2 = $("div.year-month").text();
-                    data2 = data2.split('.');
-                    let data = $(this).text();
-        			let result = data2[0]+'/'+data2[1]+'/'+data;
-        			
-        			console.log(result)
-        			
-                 	
-                    //console.log(day_current_today[]);
-                    // 클릭하면 src 이미지 경로를 그날 했던 운동 정보이름이랑 같은걸 다 가져와서 보여주기
-                    // src="./images/bar/Deadlift-2.jpg"
-                    
-                    //클릭할 때 마다 비동기식 통신방식(ajax)을 사용해서 cal.java파일로 데이터 요청
-                    // cal.java로 보내줘야하는 데이터 : result(날짜)
-                    // list --> json구조로 받아오는게 가장 사용하기 편해요.
-                    $.ajax({
-					// 요청할 서버의 url
-						url : "cal",
-						type : "GET",
-						// 반드시 키값을 달아서 데이터를 전송해줄것
-						//"data =" 띄어쓰기 ㄴㄴ
-						//data : "data="+data,
-						data : "data="+result,
-						// 받아올 결과값의 자료형을 지정하기
-						dataType : 'json',
-						success : function(res) {
-							console.log(res);
-							console.log('성공!');
-							// 하단에 res안에 들어있는 데이터가 출력될 수 있게끔 
-						
-						
-							if(res==null){
-								$('.u-text-1').html('<span>'+"운동기록이없습니다."+'</span>')
-							}else{
-								$('.u-text-1').html('<span>'+"운동이름 :"+res[0].training_name+"세트 회수 : "+ res[0].set_val+"회수/시간(초) :"+res[0].secncnt_val+'</span>')        
-								$('.u-text-2').html('<span>'+"운동이름 :"+res[1].training_name+"세트 회수 : "+ res[1].set_val+"회수/시간(초) :"+res[1].secncnt_val+'</span>')        
-								$('.u-text-3').html('<span>'+"운동이름 :"+res[2].training_name+"세트 회수 : "+ res[2].set_val+"회수/시간(초) :"+res[2].secncnt_val+'</span>')        
-		                  	
-							}
-							
-						
-							
-							
-						
-						
-                  		
-                  		
-							
-					},
-						error : function() {
-						alert('요청실패!');
-					}
-
-				});
-
-                    
-                    });
             }
 
                 

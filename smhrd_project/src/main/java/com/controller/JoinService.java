@@ -41,7 +41,7 @@ public class JoinService extends HttpServlet {
 	
 	if(cnt>0) {
 		request.setAttribute("user_id",user_id);
-		RequestDispatcher rd = request.getRequestDispatcher("new_user_survey.html");
+		RequestDispatcher rd = request.getRequestDispatcher("new_user_survey.jsp");
 		rd.forward(request, response);
 	}else {
 		System.out.println("회원가입 실패");

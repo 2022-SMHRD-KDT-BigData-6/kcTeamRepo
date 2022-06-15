@@ -41,14 +41,14 @@
             <div class="u-form-group u-form-select u-label-top u-form-group-1">
               <label for="select-37b4" class="u-label">운동 부위 선택</label>
               <div class="u-form-select-wrapper">
-                <select id="select-37b4" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option value="Item 1">팔</option>
-                  <option value="Item 2">등</option>
-                  <option value="Item 3">엉덩이</option>
-                  <option value="Item 4">하체</option>
-                  <option value="Item 5">가슴</option>
-                  <option value="Item 6">어깨</option>
-                  <option value="Item 7">전신</option>
+                <select id="select-37b4" name="parts1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <option value="Arms">팔</option>
+                  <option value="Back">등</option>
+                  <option value="Hips">엉덩이</option>
+                  <option value="Legs">하체</option>
+                  <option value="Chest">가슴</option>
+                  <option value="Shoulders">어깨</option>
+                  <option value="Full Body">전신</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
@@ -56,14 +56,14 @@
             <div class="u-form-group u-form-select u-label-top u-form-group-1">
             <label for="select-37b4" class="u-label">운동 부위 선택2</label>
               <div class="u-form-select-wrapper">
-                <select id="select-37b4" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option value="Item 21">팔</option>
-                  <option value="Item 22">등</option>
-                  <option value="Item 23">엉덩이</option>
-                  <option value="Item 24">하체</option>
-                  <option value="Item 25">가슴</option>
-                  <option value="Item 26">어깨</option>
-                  <option value="Item 27">전신</option>
+                <select id="select-37b4" name="parts2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <option value="Arms">팔</option>
+                  <option value="Back">등</option>
+                  <option value="Hips">엉덩이</option>
+                  <option value="Legs">하체</option>
+                  <option value="Chest">가슴</option>
+                  <option value="Shoulders">어깨</option>
+                  <option value="Full Body">전신</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
@@ -71,10 +71,10 @@
             <div class="u-form-group u-form-select u-label-top u-form-group-2">
               <label for="select-0e21" class="u-label">운동 기구 선택</label>
               <div class="u-form-select-wrapper">
-                <select id="select-0e21" name="select-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option value="Item 8">바벨</option>
-                  <option value="Item 9">덤벨</option>
-                  <option value="Item 10">머신</option>
+                <select id="select-0e21" name="equip1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <option value="Barbell">바벨</option>
+                  <option value="Dumbells">덤벨</option>
+                  <option value="Weight Machines / Selectorized">머신</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
@@ -82,10 +82,10 @@
              <div class="u-form-group u-form-select u-label-top u-form-group-2">
               <label for="select-0e21" class="u-label">운동 기구 선택2</label>
               <div class="u-form-select-wrapper">
-                <select id="select-0e21" name="select-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option value="Item 28">바벨</option>
-                  <option value="Item 29">덤벨</option>
-                  <option value="Item 30">머신</option>
+                <select id="select-0e21" name="equip2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <option value="Barbell">바벨</option>
+                  <option value="Dumbells">덤벨</option>
+                  <option value="Weight Machines / Selectorized">머신</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
@@ -94,10 +94,10 @@
             <div class="u-form-group u-form-select u-label-top u-form-group-3">
               <label for="select-3739" class="u-label">운동 난이도 선택</label>
               <div class="u-form-select-wrapper">
-                <select id="select-3739" name="select-2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option value="Item 11">Beginner</option>
-                  <option value="Item 12">Intermediate</option>
-                  <option value="Item 13">Advanced</option>
+                <select id="select-3739" name="dif1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
@@ -105,10 +105,10 @@
             <div class="u-form-group u-form-select u-label-top u-form-group-3">
               <label for="select-3739" class="u-label">운동 난이도 선택2</label>
               <div class="u-form-select-wrapper">
-                <select id="select-3739" name="select-2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option value="Item 11">Beginner</option>
-                  <option value="Item 12">Intermediate</option>
-                  <option value="Item 13">Advanced</option>
+                <select id="select-3739" name="dif2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
@@ -117,14 +117,14 @@
             <div class="u-form-group u-form-select u-label-top u-form-group-4">
               <label for="select-4771" class="u-label">비선호 부위 선택</label>
               <div class="u-form-select-wrapper">
-                <select id="select-4771" name="select-3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option value="Item 14">팔</option>
-                  <option value="Item 15">등</option>
-                  <option value="Item 16">엉덩이</option>
-                  <option value="Item 17">하체</option>
-                  <option value="Item 18">가슴</option>
-                  <option value="Item 19">어깨</option>
-                  <option value="Item 20">전신</option>
+                <select id="select-4771" name="hateparts" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <option value="Arms">팔</option>
+                  <option value="Back">등</option>
+                  <option value="Hips">엉덩이</option>
+                  <option value="Legs">하체</option>
+                  <option value="Chest">가슴</option>
+                  <option value="Shoulders">어깨</option>
+                  <option value="Full Body">전신</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
@@ -133,8 +133,7 @@
 
            
             <div class="u-align-left u-form-group u-form-submit u-label-top">
-              <input type="submit" value="submit" class="u-form-control-hidden">
-              <a href="exercise.jsp" class="u-btn u-btn-submit u-button-style">Submit</a>
+              <input type="submit" value="보내기"  class="u-btn u-btn-submit u-button-style">
             </div>
             <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
             <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>

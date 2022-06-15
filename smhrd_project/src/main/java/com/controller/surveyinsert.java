@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.model.reco_for_training_infovo;
 import com.model.user_infoVO;
 import com.model.user_training_infoDAO;
 import com.model.user_training_infoVO;
@@ -23,7 +24,9 @@ public class surveyinsert extends HttpServlet {
 	
 	HttpSession session = request.getSession();
 	user_infoVO uservo =(user_infoVO)session.getAttribute("uvo");
-
+	//user_training_infoVO q = (user_training_infoVO) request.getAttribute("q");
+	
+    //int training_index = q.getTraining_index();
 	String user_id = uservo.getUser_id();
 	
 	int set_val1 = Integer.parseInt(request.getParameter("set_val1"));
@@ -36,16 +39,19 @@ public class surveyinsert extends HttpServlet {
 	String secncnt_val3 = request.getParameter("secncnt_val3");
 	
 	user_training_infoVO vo1 = new user_training_infoVO();
+	//vo1.setTraining_index(training_index);
 	vo1.setUser_id(user_id);
 	vo1.setSet_val(set_val1);
 	vo1.setSecncnt_val(secncnt_val1);
 	
 	user_training_infoVO vo2 = new user_training_infoVO();
+	//vo2.setTraining_index(training_index);
 	vo2.setUser_id(user_id);
 	vo2.setSet_val(set_val2);
 	vo2.setSecncnt_val(secncnt_val2);
 	
 	user_training_infoVO vo3 = new user_training_infoVO();
+	//vo3.setTraining_index(training_index);
 	vo3.setUser_id(user_id);
 	vo3.setSet_val(set_val3);
 	vo3.setSecncnt_val(secncnt_val3);
@@ -57,7 +63,7 @@ public class surveyinsert extends HttpServlet {
 	int cnt3 = dao.surveyinsert(vo3);
 	
 	if(cnt3>0) {
-		response.sendRedirect("detail.jsp");
+		response.sendRedirect("detail.html");
 	}else {
 		System.out.println("½ÇÆÐ");
 		response.sendRedirect("exercise.jsp");

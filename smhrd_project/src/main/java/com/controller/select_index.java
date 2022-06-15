@@ -27,7 +27,7 @@ public class select_index extends HttpServlet {
 	
 	String nextPage =null;
 	if(result != null) {
-		nextPage = "exercise.jsp";
+		nextPage = "detail.html";
 	}else {
 		nextPage = "new_user_survey.jsp";
 	}
