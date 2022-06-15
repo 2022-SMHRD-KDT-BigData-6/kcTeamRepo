@@ -25,22 +25,38 @@ public class surveyinsert extends HttpServlet {
 	user_infoVO uservo =(user_infoVO)session.getAttribute("uvo");
 
 	String user_id = uservo.getUser_id();
-	int set_val = Integer.parseInt(request.getParameter("set_val"));
-	String secncnt_val = request.getParameter("secncnt_val");
 	
-	int training_index = (int) request.getAttribute("q");
+	int set_val1 = Integer.parseInt(request.getParameter("set_val1"));
+	String secncnt_val1 = request.getParameter("secncnt_val1");
 	
-	user_training_infoVO vo = new user_training_infoVO();
-	vo.setUser_id(user_id);
-	vo.setTraining_index(training_index);
-	vo.setSet_val(set_val);
-	vo.setSecncnt_val(secncnt_val);
+	int set_val2 = Integer.parseInt(request.getParameter("set_val2"));
+	String secncnt_val2 = request.getParameter("secncnt_val2");
+	
+	int set_val3 = Integer.parseInt(request.getParameter("set_val3"));
+	String secncnt_val3 = request.getParameter("secncnt_val3");
+	
+	user_training_infoVO vo1 = new user_training_infoVO();
+	vo1.setUser_id(user_id);
+	vo1.setSet_val(set_val1);
+	vo1.setSecncnt_val(secncnt_val1);
+	
+	user_training_infoVO vo2 = new user_training_infoVO();
+	vo2.setUser_id(user_id);
+	vo2.setSet_val(set_val2);
+	vo2.setSecncnt_val(secncnt_val2);
+	
+	user_training_infoVO vo3 = new user_training_infoVO();
+	vo3.setUser_id(user_id);
+	vo3.setSet_val(set_val3);
+	vo3.setSecncnt_val(secncnt_val3);
 		
 	user_training_infoDAO dao = new user_training_infoDAO();
 	
-	int cnt = dao.surveyinsert(vo);
+	int cnt1 = dao.surveyinsert(vo1);
+	int cnt2 = dao.surveyinsert(vo2);
+	int cnt3 = dao.surveyinsert(vo3);
 	
-	if(cnt>0) {
+	if(cnt3>0) {
 		response.sendRedirect("detail.jsp");
 	}else {
 		System.out.println("½ÇÆÐ");

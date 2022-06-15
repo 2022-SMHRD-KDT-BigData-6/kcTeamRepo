@@ -123,18 +123,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-80dc"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+        <p class="u-small-text u-text u-text-variant u-text-1">created with 진석, 지민, 민호, 규창, 감중</p>
       </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/templates" target="_blank">
-        <span>Free Template</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.cc" target="_blank">
-        <span>Website Builder</span>
-      </a>. 
-    </section>
+   
   </body>
 </html>

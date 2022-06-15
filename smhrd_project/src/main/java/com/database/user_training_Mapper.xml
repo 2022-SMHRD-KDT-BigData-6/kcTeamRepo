@@ -14,17 +14,14 @@ where to_char(training_date,'yy/mm/dd') = to_char(sysdate,'yy/mm/dd')
 
 
 <insert id="surveyinsert" parameterType="com.model.user_training_infoVO">
-	<selectKey keyProperty="sq" resultType="int" order="BEFORE">
-	select user_training_info_no_seq.nextval from user_training_info
-	</selectKey>
-		insert into user_training_info
+	    insert into user_training_info
 		values(
-		#{sq},
-		#{user_id},
+		USER_TRAINING_INFO_NO_SEQ.nextval,
 		#{training_index},
 		#{set_val},
 		#{secncnt_val},
-		sysdate
+		sysdate,
+		#{user_id}
 		)
 	</insert>
 
