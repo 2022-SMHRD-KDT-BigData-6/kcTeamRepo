@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,7 @@ import com.model.reco_for_user_survay;
 import com.model.reco_select_user_data;
 import com.model.training_infoDAO;
 import com.model.training_infoVO;
+import com.model.userid_training_listVO;
 
 /**
  * Servlet implementation class reco_algo
@@ -165,6 +167,7 @@ public class reco_algo extends HttpServlet {
 	            } 
 	         }
 	      }
+	      
 	      //추천 운동 명 저장
 	      List<String> reco_training = new ArrayList<String>();
 	      training_infoDAO training_info_dao = new training_infoDAO();
@@ -172,13 +175,24 @@ public class reco_algo extends HttpServlet {
 	      
 	      training_infoVO reco_training_name_buf = new training_infoVO();
 	      
+	      
+	      List<Integer> q = new ArrayList<Integer>();
+	      
 	      System.out.println("정렬 후");
 	      for (int i = inVos.size(); i > inVos.size()-3; i--) {
 	         System.out.print(inVos.get(i-1).getTraining_index()+":"+inVos.get(i-1).getScore()+"\t");
-	        System.out.println(training_info_dao.select_training_name(inVos.get(i-1).getTraining_index()));
-	         
-	      }
+		    System.out.println(training_info_dao.select_training_name(inVos.get(i-1).getTraining_index()));
 
+	         q.add(inVos.get(i-1).getTraining_index());
+	  
+	      }
+	      
+	      System.out.println(q);
+	      
+	      request.setAttribute("q", q);
+	  	
+	  	RequestDispatcher rd = request.getRequestDispatcher("surveyinsert");
+	  	rd.forward(request, response);   
 	     
 	      
 	}
