@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="exercise.css" media="screen">
     <link rel="stylesheet" href="view_recom.css" media="screen">
     <link rel="stylesheet" href="new_user.css" media="screen">
-<link rel="stylesheet" href="view_recom.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <!-- <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> -->
     <meta name="generator" content="Nicepage 4.12.14, nicepage.com">
@@ -60,9 +59,8 @@
             
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-                <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512">
+                <img alt="" class="u-image u-image-circle u-image-1" src="<%="./copy_img/"+dao.select_training_name(q.get(0))+"-1.jpg" %>" data-image-width="512" data-image-height="512">
                
-                </div>
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
                 <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2">
@@ -77,7 +75,8 @@
             </div>
            <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-                <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
+              
+                <img alt="" class="u-image u-image-circle u-image-1" src="<%="./copy_img/"+dao.select_training_name(q.get(1))+"-1.jpg" %>" data-image-width="512" data-image-height="512">
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
                 <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2">
@@ -91,7 +90,7 @@
             
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-                <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="512" data-image-height="512"></div>
+                <img alt="" class="u-image u-image-circle u-image-1" src="<%="./copy_img/"+dao.select_training_name(q.get(2))+"-1.jpg" %>" data-image-width="512" data-image-height="512">
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
                 <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2">

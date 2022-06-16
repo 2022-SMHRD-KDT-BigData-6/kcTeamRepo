@@ -24,7 +24,8 @@
 .u-section-1 .u-image-1 {
   width: 290px;
   height: 290px;
-  background-image: url("images/male-silhouette-variant-showing-muscles.png");
+  /* 여기 지우고 */
+  /*   background-image: url("images/male-silhouette-variant-showing-muscles.png");  */
   background-position: 50% 50%;
   margin: 0 auto;
 }
@@ -50,7 +51,7 @@
 .u-section-1 .u-image-2 {
   width: 290px;
   height: 290px;
-  background-image: url("images/male-silhouette-variant-showing-muscles.png");
+  /* background-image: url("images/male-silhouette-variant-showing-muscles.png"); */
   background-position: 50% 50%;
   margin: 0 auto;
 }
@@ -76,7 +77,7 @@
 .u-section-1 .u-image-3 {
   width: 290px;
   height: 290px;
-  background-image: url("images/male-silhouette-variant-showing-muscles.png");
+  /* background-image: url("images/male-silhouette-variant-showing-muscles.png"); */
   background-position: 50% 50%;
   margin: 0 auto;
 }
