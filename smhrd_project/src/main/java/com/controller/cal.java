@@ -41,6 +41,7 @@ public class cal extends HttpServlet {
       // 날짜정보 꺼내오기
       String data = request.getParameter("data");
       
+      session.setAttribute("data", data);
       //select_training_byId(id, date)
       userid_training_listVO usertvo = new userid_training_listVO();
       

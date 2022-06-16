@@ -14,18 +14,32 @@ from training_info
 </select>
 
 <select id="reco_one_yesterday_training_parts" resultType="String">
-	select ti.training_part 
-	from training_info ti join userid_training_list utl 
-	on ti.training_name = utl.training_name 
-	where to_char(utl.training_date,'YY/MM/DD') like sysdate-1 and utl.user_id=#{user_id}
+   select ti.training_part 
+   from training_info ti join userid_training_list utl 
+   on ti.training_name = utl.training_name 
+   where to_char(utl.training_date,'YY/MM/DD') like sysdate-1 and utl.user_id=#{user_id}
 </select>
 
 <select id="reco_two_yesterday_training_parts" resultType="String">
-	select ti.training_part 
-	from training_info ti join userid_training_list utl 
-	on ti.training_name = utl.training_name 
-	where to_char(utl.training_date,'YY/MM/DD') like sysdate-2 and utl.user_id=#{user_id}
+   select ti.training_part 
+   from training_info ti join userid_training_list utl 
+   on ti.training_name = utl.training_name 
+   where to_char(utl.training_date,'YY/MM/DD') like sysdate-2 and utl.user_id=#{user_id}
 </select>
+
+
+<select id="reco_today_training_parts" resultType="com.model.today_user_trainingVO" parameterType="String">
+select ti.training_index,ti.training_name, ti.cnt, uti.set_val, uti.secncnt_val
+from training_info ti join user_training_info uti
+on ti.training_index = uti.training_index
+where ti.training_index in
+(select training_index 
+from user_training_info 
+where training_date 
+like sysdate and user_id = #{user_id})
+</select>
+
+
 
 
 </mapper>

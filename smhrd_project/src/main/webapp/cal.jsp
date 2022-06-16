@@ -8,6 +8,7 @@
 <%@page import="com.model.training_infoVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;">
 
@@ -18,7 +19,9 @@
     <meta name="description" content="">
     <title>Contact</title>
     <link rel="stylesheet" href="Record.css" media="screen">
-    <link rel="stylesheet" href="Contact.css" media="screen">
+    
+    <link rel="stylesheet" href="nicepage.css">
+    <link rel="stylesheet" href="Page-1.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="generator" content="Nicepage 4.12.14, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet"
@@ -40,11 +43,21 @@
 </head>
 
 <body class="u-body u-xl-mode">
-    <header class="u-clearfix u-header u-header" id="sec-be5f">
+
+
+    <header class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-clearfix u-header u-header" id="sec-fdc6">
+        
+        <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+            <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="512" data-image-height="512">
+              <img src="images/male-silhouette-variant-showing-muscles.png" class="u-logo-image u-logo-image-1">
+            </a>
+            <h2 class="u-text u-text-default-xs u-text-1">운동 기록</h2>
+          </div>
+    </header>
    
         <div class="u-clearfix u-sheet u-sheet-1">
 
-            <div class="sec_cal">
+            <div class="sec_cal" style="border-bottom: 1px solid black;">
                 <div class="cal_nav">
                     <a href="javascript:;" class="nav-btn go-prev">prev</a>
                     <div class="year-month"></div>
@@ -68,34 +81,37 @@
 
             </div>
 
-            <section class="u-border-2 u-border-grey-75 u-clearfix u-section-1" id="sec-98d0">
-                <div class="u-clearfix u-sheet u-sheet-1">
-                  <div class="u-expanded-width u-list u-list-1">
-                    <a href="detail.jsp">
-                    <div class="u-repeater u-repeater-1">
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <div class="u-container-layout u-similar-container u-container-layout-1">
-                          <img class="u-image u-image-default u-preserve-proportions u-image-1" src=<%="./images/bar/Deadlift-1.jpg" %> alt="" data-image-width="512" data-image-height="512">
-                          <p class="u-text u-text-1"> 1.</p>
+            <section style="border-bottom: 1px solid black">
+              <div>
+                <div>
+                  <a href="detail.jsp">
+                    <div>
+                      <div>
+                        <div> 
+                          <p>
+                            1.
+                          </p>
                         </div>
                       </div>
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <div class="u-container-layout u-similar-container u-container-layout-2">
-                          <img class="u-image u-image-default u-preserve-proportions u-image-2" src=<%="./images/dum/Lunge-1.jpg" %> alt="" data-image-width="512" data-image-height="512">
-                          <p class="u-text u-text-2"> 2.</p>
+                      <div>
+                        <div>
+                          <p>
+                            2.
+                          </p>
                         </div>
                       </div>
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <div class="u-container-layout u-similar-container u-container-layout-3">
-                          <img class="u-image u-image-default u-preserve-proportions u-image-3" src=<%="./images/bar/Deadlift-2.jpg" %> alt="" data-image-width="512" data-image-height="512">
-                          <p class="u-text u-text-3"> 3.</p>
+                      <div>
+                        <div> 
+                          <p>
+                            3.
+                          </p>
                         </div>
                       </div>
                     </div>
-                    </a>
-                  </div>
+                  </a>
                 </div>
-              </section>
+              </div>
+            </section>
                  
             <script 
             src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -236,13 +252,13 @@
                       
                       
                          if(res.length==0){
-                            $('.u-text-1').html('<span>'+"운동기록이없습니다."+'</span>')
-                            $('.u-text-2').html('<span>'+"운동기록이없습니다."+'</span>')
-                            $('.u-text-3').html('<span>'+"운동기록이없습니다."+'</span>')
+                            $('div:nth-child(1) > div > p').html('<span>'+"운동기록이없습니다."+'</span>')
+                            $('div:nth-child(2) > div > p').html('<span>'+"운동기록이없습니다."+'</span>')
+                            $('div:nth-child(3) > div > p').html('<span>'+"운동기록이없습니다."+'</span>')
                          }else{
-                            $('.u-text-1').html('<span>'+"운동이름 :"+res[0].training_name+"세트 회수 : "+ res[0].set_val+"회수/시간(초) :"+res[0].secncnt_val+'</span>')        
-                            $('.u-text-2').html('<span>'+"운동이름 :"+res[1].training_name+"세트 회수 : "+ res[1].set_val+"회수/시간(초) :"+res[1].secncnt_val+'</span>')        
-                            $('.u-text-3').html('<span>'+"운동이름 :"+res[2].training_name+"세트 회수 : "+ res[2].set_val+"회수/시간(초) :"+res[2].secncnt_val+'</span>')        
+                            $('div:nth-child(1) > div > p').html('<span>'+"운동이름 :"+res[0].training_name+"세트 회수 : "+ res[0].set_val+"회수 :"+res[0].secncnt_val+'</span>')        
+                            $('div:nth-child(2) > div > p').html('<span>'+"운동이름 :"+res[1].training_name+"세트 회수 : "+ res[1].set_val+"회수 :"+res[1].secncnt_val+'</span>')        
+                            $('div:nth-child(3) > div > p').html('<span>'+"운동이름 :"+res[2].training_name+"세트 회수 : "+ res[2].set_val+"회수 :"+res[2].secncnt_val+'</span>')        
                                
                          }
                          
@@ -277,6 +293,7 @@
 
                     
                     
+
             }
 
                 
@@ -286,6 +303,43 @@
             </script>
 
 
-</body>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+   // <![CDATA[  <-- For SVG support
+   if ('WebSocket' in window) {
+      (function () {
+         function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+               var elem = sheets[i];
+               var parent = elem.parentElement || head;
+               parent.removeChild(elem);
+               var rel = elem.rel;
+               if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                  var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                  elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+               }
+               parent.appendChild(elem);
+            }
+         }
+         var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+         var address = protocol + window.location.host + window.location.pathname + '/ws';
+         var socket = new WebSocket(address);
+         socket.onmessage = function (msg) {
+            if (msg.data == 'reload') window.location.reload();
+            else if (msg.data == 'refreshcss') refreshCSS();
+         };
+         if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+            console.log('Live reload enabled.');
+            sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+         }
+      })();
+   }
+   else {
+      console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+   }
+   // ]]>
+</script></body>
 
 </html>

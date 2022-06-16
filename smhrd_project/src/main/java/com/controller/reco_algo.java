@@ -2,6 +2,8 @@ package com.controller;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -13,6 +15,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import com.model.reco_for_scoreTemp;
 import com.model.reco_for_training_infoDAO;
@@ -21,18 +25,13 @@ import com.model.reco_for_user_survay;
 import com.model.reco_select_user_data;
 import com.model.training_infoDAO;
 import com.model.training_infoVO;
+import com.model.user_infoVO;
 import com.model.userid_training_listVO;
 
-/**
- * Servlet implementation class reco_algo
- */
 @WebServlet("/reco_algo")
 public class reco_algo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		/*알고리즘 시작*/
@@ -40,9 +39,6 @@ public class reco_algo extends HttpServlet {
 		reco_for_training_infoDAO dao = new reco_for_training_infoDAO();
 	    List<reco_for_training_infovo> inVos = dao.reco_training_score_init();
 
-	    
-	    
-	    
 	     System.out.println(inVos);	    	
 	     
 	      for (int i = 0; i < inVos.size(); i++)
@@ -59,23 +55,48 @@ public class reco_algo extends HttpServlet {
 	      String dif2 = request.getParameter("dif2");
 	      String hatepart = request.getParameter("hateparts");
 	      
+	      System.out.println(favor_part1);
+	      System.out.println(favor_part2);
+	      System.out.println(equip1);
+	      System.out.println(equip2);
+	      System.out.println(dif1);
+	      System.out.println(dif2);
+	      System.out.println(hatepart);
 	      
+	      HttpSession session = request.getSession();
+	      String user_id = ((user_infoVO)session.getAttribute("uvo")).getUser_id();
 	      String b[] = { favor_part1, favor_part2 };// 선호부위
 	      String c[] = { equip1, equip2 };// 기구
 	      String a[] = { dif1, dif2 };// 난이도
-	      List<String> list1 = yesterday_dao.reco_one_yesterday_training_parts("a");
-	      List<String> list2 = yesterday_dao.reco_two_yesterday_training_parts("a");
+	      List<String> list1 = yesterday_dao.reco_one_yesterday_training_parts(user_id);
+	      List<String> list2 = yesterday_dao.reco_two_yesterday_training_parts(user_id);
+	      
+	      System.out.println(user_id);
+	      
+	      System.out.println(list1);
+	      System.out.println(list2);
 	      
 	      // 난이도, 선호부위, 비선호, 했던 운동 부위, 선호 장비
 
 	      
 	     String[][] d = new String[2][3];
 	     
-	     for(int i =0; i<3; i++) {
-	    	 d[0][i] = list1.get(i);
-	    	 d[1][i] = list2.get(i);
-	     }
-	      
+	     if(list1.size() == 0 && list2.size() == 0) {
+	    	 for(int i =0; i<3; i++) {
+	               d[0][i] = "-";
+	               d[1][i] = "-";
+	        }
+	    	 }else if(list2.size() == 0) {
+	    		 for(int i =0; i<3; i++) {
+	    		d[0][i] = list1.get(i);
+	        	d[1][i] = "-";
+	    		 }		            
+	         }else {
+	        	 for(int i =0; i<3; i++) {
+	 	            d[0][i] = list1.get(i);
+	 	            d[1][i] = list2.get(i);
+	        	 }
+	         }
 	      reco_for_user_survay ui = new reco_for_user_survay(a, b, hatepart,d,c);    
 	    
 	      // 선호부위계산
@@ -197,7 +218,8 @@ public class reco_algo extends HttpServlet {
 	        q.add(inVos.get(i-1).getTraining_index());
 	  
 	      }
-	      
+
+	     
 	      
 	    request.setAttribute("q", q);
 	  	

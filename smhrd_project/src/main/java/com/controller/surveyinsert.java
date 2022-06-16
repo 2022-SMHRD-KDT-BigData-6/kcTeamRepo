@@ -69,7 +69,7 @@ public class surveyinsert extends HttpServlet {
 	int cnt3 = dao.surveyinsert(vo3);
 	
 	if(cnt3>0) {
-		response.sendRedirect("detail.html");
+		response.sendRedirect("detail.jsp");
 	}else {
 		System.out.println("½ÇÆÐ");
 		response.sendRedirect("exercise.jsp");

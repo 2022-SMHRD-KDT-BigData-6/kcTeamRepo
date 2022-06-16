@@ -7,9 +7,9 @@
 <mapper namespace="com.model.user_training_infoDAO">
 <!-- parameterType : alias 지정했는지 확인할 것 -->
 
-<select id="select_index" resultType="com.model.user_training_infoVO">
+<select id="select_index" resultType="com.model.user_training_infoVO" parameterType="String">
 select * from user_training_info
-where to_char(training_date,'yy/mm/dd') = to_char(sysdate,'yy/mm/dd') and ROWNUM = 1
+where user_id = #{user_id} and to_char(training_date,'yy/mm/dd') = to_char(sysdate,'yy/mm/dd') and ROWNUM = 1
 </select>
 
 

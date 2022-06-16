@@ -9,7 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.model.user_infoVO;
 import com.model.user_training_infoDAO;
 import com.model.user_training_infoVO;
 
@@ -22,12 +24,14 @@ public class select_index extends HttpServlet {
 //	String training_date = request.getParameter("training_date");
 	
 	user_training_infoDAO dao = new user_training_infoDAO();
+	HttpSession session = request.getSession();
+	String user_id =((user_infoVO)session.getAttribute("uvo")).getUser_id();
 	
-	user_training_infoVO result = dao.select_index();
+	user_training_infoVO result = dao.select_index(user_id);
 	
 	String nextPage =null;
 	if(result != null) {
-		nextPage = "detail.html";
+		nextPage = "detail.jsp";
 	}else {
 		nextPage = "new_user_survey.jsp";
 	}

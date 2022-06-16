@@ -1,3 +1,5 @@
+<%@page import="java.time.LocalDateTime"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="com.model.userid_training_listVO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -28,8 +30,14 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-fdc6"><div class="u-clearfix u-sheet u-sheet-1">
+ 
   <%
   List<userid_training_listVO> vo = (List<userid_training_listVO>)request.getAttribute("vo");
+  
+  DateTimeFormatter format = DateTimeFormatter.ofPattern("yy/MM/dd");
+  String date = format.format(LocalDateTime.now());
+request.getSession().setAttribute("data",date); 
+  
   %>
 
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="512" data-image-height="512">

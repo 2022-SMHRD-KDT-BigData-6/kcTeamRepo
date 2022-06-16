@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.model.user_infoDAO;
 import com.model.user_infoVO;
@@ -40,12 +41,15 @@ public class JoinService extends HttpServlet {
 	int cnt = dao.joininsert(uvo);
 	
 	if(cnt>0) {
+		HttpSession session = request.getSession();
+		session.setAttribute("uvo",uvo);
+		
 		request.setAttribute("user_id",user_id);
-		RequestDispatcher rd = request.getRequestDispatcher("new_user_survey.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("main_login_success.jsp");
 		rd.forward(request, response);
 	}else {
 		System.out.println("회원가입 실패");
-		response.sendRedirect("main.html");
+		response.sendRedirect("main.jsp");
 	}
 	
 	
