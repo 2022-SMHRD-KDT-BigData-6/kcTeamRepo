@@ -256,9 +256,9 @@
                             $('div:nth-child(2) > div > p').html('<span>'+"운동기록이없습니다."+'</span>')
                             $('div:nth-child(3) > div > p').html('<span>'+"운동기록이없습니다."+'</span>')
                          }else{
-                            $('div:nth-child(1) > div > p').html('<span>'+"운동이름 :"+res[0].training_name+"세트 회수 : "+ res[0].set_val+"회수 :"+res[0].secncnt_val+'</span>')        
-                            $('div:nth-child(2) > div > p').html('<span>'+"운동이름 :"+res[1].training_name+"세트 회수 : "+ res[1].set_val+"회수 :"+res[1].secncnt_val+'</span>')        
-                            $('div:nth-child(3) > div > p').html('<span>'+"운동이름 :"+res[2].training_name+"세트 회수 : "+ res[2].set_val+"회수 :"+res[2].secncnt_val+'</span>')        
+                            $('div:nth-child(1) > div > p').html('<span>'+"운동이름 : "+res[0].training_name+'<br>'+"세트 : "+ res[0].set_val+'<br>'+"횟수 :"+res[0].secncnt_val+'</span>')        
+                            $('div:nth-child(2) > div > p').html('<span>'+"운동이름 : "+res[1].training_name+'<br>'+"세트 : "+ res[1].set_val+'<br>'+"횟수 :"+res[1].secncnt_val+'</span>')        
+                            $('div:nth-child(3) > div > p').html('<span>'+"운동이름 : "+res[2].training_name+'<br>'+"세트 : "+ res[2].set_val+'<br>'+"횟수 :"+res[2].secncnt_val+'</span>')        
                                
                          }
                          

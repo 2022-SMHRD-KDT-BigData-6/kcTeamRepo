@@ -59,7 +59,7 @@
             
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-                <img alt="" class="u-image u-image-circle u-image-1" src="<%="./copy_img/"+dao.select_training_name(q.get(0))+"-1.jpg" %>" data-image-width="512" data-image-height="512">
+                <img alt="" class="u-image u-image-circle u-image-1" src="<%="./copy_img/"+dao.select_training_name(q.get(0))+".gif" %>" data-image-width="512" data-image-height="512">
                
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
@@ -76,7 +76,7 @@
            <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
               
-                <img alt="" class="u-image u-image-circle u-image-1" src="<%="./copy_img/"+dao.select_training_name(q.get(1))+"-1.jpg" %>" data-image-width="512" data-image-height="512">
+                <img alt="" class="u-image u-image-circle u-image-1" src="<%="./copy_img/"+dao.select_training_name(q.get(1))+".gif" %>" data-image-width="512" data-image-height="512">
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
                 <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2">
@@ -90,7 +90,7 @@
             
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-                <img alt="" class="u-image u-image-circle u-image-1" src="<%="./copy_img/"+dao.select_training_name(q.get(2))+"-1.jpg" %>" data-image-width="512" data-image-height="512">
+                <img alt="" class="u-image u-image-circle u-image-1" src="<%="./copy_img/"+dao.select_training_name(q.get(2))+".gif" %>" data-image-width="512" data-image-height="512">
                 <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">
                 </h5>
                 <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-2">

@@ -125,6 +125,8 @@
                   <option value="Chest">가슴</option>
                   <option value="Shoulders">어깨</option>
                   <option value="Full Body">전신</option>
+                  <option value="None">없음</option>
+                  
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>

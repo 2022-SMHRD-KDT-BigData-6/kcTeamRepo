@@ -41,6 +41,7 @@ public class LoginService extends HttpServlet {
 			session.setAttribute("uvo", result);
 			response.sendRedirect("main_login_success.jsp");
 		}else {
+			
 			System.out.println("로그인 실패");
 			response.sendRedirect("login.html");
 		}

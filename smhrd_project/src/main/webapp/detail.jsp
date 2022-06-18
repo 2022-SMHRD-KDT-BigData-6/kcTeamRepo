@@ -52,50 +52,46 @@
           <div class="u-repeater u-repeater-1">
             <div class="u-border-2 u-border-grey-75 u-container-style u-list-item u-repeater-item u-list-item-1">
               <div class="u-container-layout u-similar-container u-container-layout-1">
-              
+               
                 <div class="iframe_area">
-                        <iframe class="iframe_img" src="./move_img1.jsp"
+                        <img style="margin-left:13px" class="iframe_img" src="./copy_img/<%=vo.get(0).getTraining_name() %>.gif"
                            name="test1" width=310 height=400
                            sandbox="allow-scripts allow-popups" marginWidth=0
                            marginHeight=0 frameBorder=no scrolling=no allowfullscreen>
-                        </iframe>
                      </div>
                 
-                
-                <p class="u-align-center-xs u-text u-text-default-xs u-text-1"><%=vo.get(0).getTraining_name() %></p>
-                <p class="u-align-left-xs u-text u-text-default-xs u-text-1"><%=vo.get(0).getSet_val() %></p>
-                <p class="u-align-left-xs u-text u-text-default-xs u-text-1"><%=vo.get(0).getSecncnt_val() %></p>
+                <p class="u-align-center-xs u-text u-text-default-xs u-text-1">운동명 :  <%=vo.get(0).getTraining_name() %></p>
+                <p class="u-align-left-xs u-text u-text-default-xs u-text-1">세트수   :    <%=vo.get(0).getSet_val() %></p>
+                <p class="u-align-left-xs u-text u-text-default-xs u-text-1">횟수   :   <%=vo.get(0).getSecncnt_val() %></p>
               </div>
             </div>
             <div class="u-border-2 u-border-grey-75 u-container-style u-list-item u-repeater-item u-list-item-2">
               <div class="u-container-layout u-similar-container u-container-layout-2">
               
                <div class="iframe_area">
-                        <iframe class="iframe_img" src="./move_img2.jsp"
+                        <img style="margin-left:13px" class="iframe_img" src="./copy_img/<%=vo.get(1).getTraining_name() %>.gif"
                            name="test1" width=310 height=400
-                           sandbox="allow-scripts allow-popups" marginWidth=0
+                           sandbox="allow-scripts allow-popups" marginWidth=0 
                            marginHeight=0 frameBorder=no scrolling=no allowfullscreen>
-                        </iframe>
                      </div>
                      
-                <p class="u-align-center-xs u-text u-text-default-xs u-text-4"><%=vo.get(1).getTraining_name() %></p>
-                <p class="u-align-left-xs u-text u-text-default-xs u-text-4"><%=vo.get(1).getSet_val() %></p>
-                <p class="u-align-left-xs u-text u-text-default-xs u-text-4"><%=vo.get(1).getSecncnt_val() %></p>
+                <p class="u-align-center-xs u-text u-text-default-xs u-text-4">운동명 :  <%=vo.get(1).getTraining_name() %></p>
+                <p class="u-align-left-xs u-text u-text-default-xs u-text-4">세트수   :   <%=vo.get(1).getSet_val() %></p>
+                <p class="u-align-left-xs u-text u-text-default-xs u-text-4">횟수   :   <%=vo.get(1).getSecncnt_val() %></p>
               </div>
             </div>
             <div class="u-border-2 u-border-grey-75 u-container-style u-list-item u-repeater-item u-list-item-3">
               <div class="u-container-layout u-similar-container u-container-layout-3">
               
                <div class="iframe_area">
-                        <iframe class="iframe_img" src="./move_img3.jsp"
+                        <img style="margin-left:13px" class="iframe_img" src="./copy_img/<%=vo.get(2).getTraining_name() %>.gif"
                            name="test1" width=310 height=400
                            sandbox="allow-scripts allow-popups" marginWidth=0
                            marginHeight=0 frameBorder=no scrolling=no allowfullscreen>
-                        </iframe>
                      </div>
-                <p class="u-align-center-xs u-text u-text-default-xs u-text-7"><%=vo.get(2).getTraining_name() %></p>
-                <p class="u-align-left-xs u-text u-text-default-xs u-text-7"><%=vo.get(2).getSet_val() %></p>
-                <p class="u-align-left-xs u-text u-text-default-xs u-text-7"><%=vo.get(2).getSecncnt_val() %></p>
+                <p class="u-align-center-xs u-text u-text-default-xs u-text-7">운동명 :  <%=vo.get(2).getTraining_name() %></p>
+                <p class="u-align-left-xs u-text u-text-default-xs u-text-7">세트수   :   <%=vo.get(2).getSet_val() %></p>
+                <p class="u-align-left-xs u-text u-text-default-xs u-text-7">횟수   :   <%=vo.get(2).getSecncnt_val() %></p>
               </div>
             </div>
           </div>
