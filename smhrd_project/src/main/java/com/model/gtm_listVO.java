@@ -1,3 +1,5 @@
+//헬스장 관련 vo
+
 package com.model;
 
 import lombok.AllArgsConstructor;
@@ -9,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class gtm_listVO {
-	//gym_list �ｺ�� ����
+	//gym_list Çï½ºÀå Á¤º¸
 	
 	private int index_no;
 	private String gym_name;
