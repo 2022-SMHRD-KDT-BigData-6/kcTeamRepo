@@ -31,18 +31,16 @@ public class LoginService extends HttpServlet {
 		
 		user_infoVO result = dao.login(uvo);
 		
-		System.out.println(result.toString());
-		
 		
 		if(result != null) {
-			System.out.println("·Î±×ÀÎ ¼º°ø");
+			System.out.println("Â·ÃÂ±Ã—Ã€Ã Â¼ÂºÂ°Ã¸");
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("uvo", result);
 			response.sendRedirect("main_login_success.jsp");
 		}else {
 			
-			System.out.println("·Î±×ÀÎ ½ÇÆĞ");
+			System.out.println("Â·ÃÂ±Ã—Ã€Ã Â½Ã‡Ã†Ã");
 			response.sendRedirect("login.html");
 		}
 	}
