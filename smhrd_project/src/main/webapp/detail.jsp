@@ -21,6 +21,8 @@
     <
    
    <% 
+   //이전 페이지의 추천 결과(혹은 캘린더의 날짜의 운동 정보), 운동명, 현재 세션의 id를 이용하여 운동 상세 기록을 출력
+   //운동 gif ,세트, 개수/시간(초)를 출력
    userid_training_listDAO dao = new userid_training_listDAO();
    userid_training_listVO usertvo = new userid_training_listVO();
    
@@ -54,6 +56,7 @@
               <div class="u-container-layout u-similar-container u-container-layout-1">
                
                 <div class="iframe_area">
+			//iframe 이미지에서 gif 이미지로 변경함
                         <img style="margin-left:13px" class="iframe_img" src="./copy_img/<%=vo.get(0).getTraining_name() %>.gif"
                            name="test1" width=310 height=400
                            sandbox="allow-scripts allow-popups" marginWidth=0
