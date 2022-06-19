@@ -34,7 +34,7 @@ public class reco_algo extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		/*�˰����� ����*/
+		/*알고리즘 시작*/
 		List<reco_for_scoreTemp> score_lists = new ArrayList<reco_for_scoreTemp>();
 		reco_for_training_infoDAO dao = new reco_for_training_infoDAO();
 	    List<reco_for_training_infovo> inVos = dao.reco_training_score_init();
@@ -47,40 +47,41 @@ public class reco_algo extends HttpServlet {
 	      
 	      reco_for_training_infoDAO yesterday_dao = new reco_for_training_infoDAO();
 	      
-	      String favor_part1 = request.getParameter("parts1");
-	      String favor_part2 = request.getParameter("parts2");
-	      String equip1 = request.getParameter("equip1");
-	      String equip2 = request.getParameter("equip2");
-	      String dif1 = request.getParameter("dif1");
-	      String dif2 = request.getParameter("dif2");
-	      String hatepart = request.getParameter("hateparts");
+	      String favor_part1 = request.getParameter("parts1"); //선호부위 1순위
+	      String favor_part2 = request.getParameter("parts2"); //선호부위 2순위
+	      String equip1 = request.getParameter("equip1");	// 선호 운동 기구 1순위
+	      String equip2 = request.getParameter("equip2");	// 선호 운동 기구 2순위
+	      String dif1 = request.getParameter("dif1");	// 선호 운동 난이도 1순위
+	      String dif2 = request.getParameter("dif2");	// 선호 운동 난이도 2순위
+	      String hatepart = request.getParameter("hateparts"); //비선호 운동 부위
 	      
-	      System.out.println(favor_part1);
-	      System.out.println(favor_part2);
-	      System.out.println(equip1);
-	      System.out.println(equip2);
-	      System.out.println(dif1);
-	      System.out.println(dif2);
-	      System.out.println(hatepart);
+// 	      System.out.println(favor_part1);
+// 	      System.out.println(favor_part2);
+// 	      System.out.println(equip1);
+// 	      System.out.println(equip2);
+// 	      System.out.println(dif1);
+// 	      System.out.println(dif2);
+// 	      System.out.println(hatepart);
 	      
 	      HttpSession session = request.getSession();
 	      String user_id = ((user_infoVO)session.getAttribute("uvo")).getUser_id();
-	      String b[] = { favor_part1, favor_part2 };// ��ȣ����
-	      String c[] = { equip1, equip2 };// �ⱸ
-	      String a[] = { dif1, dif2 };// ���̵�
-	      List<String> list1 = yesterday_dao.reco_one_yesterday_training_parts(user_id);
-	      List<String> list2 = yesterday_dao.reco_two_yesterday_training_parts(user_id);
+	      String b[] = { favor_part1, favor_part2 };// 선호부위 설정 : index[0] - 1순위 index[1] - 2순위
+	      String c[] = { equip1, equip2 };// 기구 설정 : index[0] - 1순위 index[1] - 2순위
+	      String a[] = { dif1, dif2 };// 난이도 설정 : index[0] - 1순위 index[1] - 2순위
+	      List<String> list1 = yesterday_dao.reco_one_yesterday_training_parts(user_id); //1일 전 운동 부위
+	      List<String> list2 = yesterday_dao.reco_two_yesterday_training_parts(user_id); //2일 전 운동 부위
 	      
-	      System.out.println(user_id);
+// 	      System.out.println(user_id);
 	      
-	      System.out.println(list1);
-	      System.out.println(list2);
+// 	      System.out.println(list1);
+// 	      System.out.println(list2);
 	      
-	      // ���̵�, ��ȣ����, ��ȣ, �ߴ� � ����, ��ȣ ���
-
-	      
+	      // 난이도, 선호부위, 비선호, 했던 운동 부위, 선호 장비
 	     String[][] d = new String[2][3];
 	     
+	     //이전 일자 운동을 설정
+	     //신규 가입자의 경우 이전 운동 기록이 없는 것으로 설정
+	     //1일전 운동 기록만 있는 경우에 대한 설정 처리
 	     if(list1.size() == 0 && list2.size() == 0) {
 	    	 for(int i =0; i<3; i++) {
 	               d[0][i] = "-";
@@ -99,7 +100,7 @@ public class reco_algo extends HttpServlet {
 	         }
 	      reco_for_user_survay ui = new reco_for_user_survay(a, b, hatepart,d,c);    
 	    
-	      // ��ȣ�������
+	      // 선호부위계산(1순위:1 2순위:0.8 3순위:0.1)
 	      for (int i = 0; i < inVos.size(); i++) {
 
 	         if (ui.getFavor_part()[0].equals(inVos.get(i).getTraining_part())) {
@@ -110,7 +111,7 @@ public class reco_algo extends HttpServlet {
 	             score_lists.get(i).setFavor_part_score(0.1);
 	          }
 	      }
-	      // ��ȣ����
+	      // 비선호부위 : 비선호의 경우 0처리
 	      for (int i = 0; i < inVos.size(); i++) {
 
 	         if (ui.getHate_favor_part().equals(inVos.get(i).getTraining_part())) {
@@ -119,7 +120,7 @@ public class reco_algo extends HttpServlet {
 	      }
 	      
 
-	      // �ⱸ���
+	      // 기구계산(1순위:0.6 2순위:0.4 3순위:0.2)
 	      for (int i = 0; i < inVos.size(); i++) {
 	         
 	         if (ui.getEq()[0].equals(inVos.get(i).getTraining_equip())) {
@@ -130,7 +131,7 @@ public class reco_algo extends HttpServlet {
 	            score_lists.get(i).setEq_score(0.2);
 	         }
 	      }
-	      // ���̵� ���
+	      // 난이도 계산(1순위:0.8 2순위:0.6 3순위:0.2)
 	      for (int i = 0; i < inVos.size(); i++) {
 
 	         if (ui.getLevel()[0].equals(inVos.get(i).getTraining_dif())) {
@@ -141,17 +142,17 @@ public class reco_algo extends HttpServlet {
 	            score_lists.get(i).setLevel_score(0.2);
 	         }
 	      }
-	      // �ߴ� ����
-	      
-	      for (int i = 0; i < inVos.size(); i++) {
+		
+	      // 이전 운동 부위 : 기본값 1
+	      //1일전 : -0.8 처리
+	      //2일전 : -1 처리
+		for (int i = 0; i < inVos.size(); i++) {
 	          
 	          for(int j = 0; j<ui.getYesterday_part()[1].length; j++)
 	               if(ui.getYesterday_part()[1][j].equals(inVos.get(i).getTraining_part())){
 	                  score_lists.get(i).setYesterday_part_score(score_lists.get(i).getYesterday_part_score()-0.8);
 	                  break;
-	               }
-	                  
-	          
+	               }	          
 	          for(int j = 0; j<ui.getYesterday_part()[0].length; j++)
 	             if(ui.getYesterday_part()[0][j].equals(inVos.get(i).getTraining_part())){
 	                score_lists.get(i).setYesterday_part_score(score_lists.get(i).getYesterday_part_score()-1);
@@ -162,25 +163,26 @@ public class reco_algo extends HttpServlet {
 	         
 	       }
 
-	      // for ��
-	      System.out.println("��������ġ:");
+	      // for 끝
+	      System.out.println("부위가중치:");
 	      for (int i = 0; i < score_lists.size(); i++) {
 	         System.out.println(score_lists.get(i).getFavor_part_score());
 	      }
-	      System.out.println("�ⱸ����ġ:");
+	      System.out.println("기구가중치:");
 	      for (int i = 0; i < score_lists.size(); i++) {
 	         System.out.println(score_lists.get(i).getEq_score());
 	      }
-	      System.out.println("���̵�����ġ:");
+	      System.out.println("난이도가중치:");
 	      for (int i = 0; i < score_lists.size(); i++) {
 	         System.out.println(score_lists.get(i).getLevel_score());
 	      }
 	      
-	      System.out.println("���� ��¥ � ���� ����ġ:");   
+	      System.out.println("이전 날짜 운동 관련 가중치:");   
 	      for(int i =0; i<score_lists.size(); i++) {
 	         System.out.println(score_lists.get(i).getYesterday_part_score());
 	      }
-	      System.out.println("����ġ���ھ� ����");
+	      System.out.println("가중치스코어 총합");
+		
 	      for(int i =0; i<score_lists.size(); i++) {
 	         inVos.get(i).setScore(score_lists.get(i).getLevel_score()*score_lists.get(i).getEq_score()*score_lists.get(i).getFavor_part_score()*score_lists.get(i).getYesterday_part_score());
 	          System.out.println(inVos.get(i).getScore());
@@ -200,7 +202,7 @@ public class reco_algo extends HttpServlet {
 	         }
 	      }
 	      
-	      //��õ � �� ����
+	      //추천 운동 명 저장
 	      List<String> reco_training = new ArrayList<String>();
 	      training_infoDAO training_info_dao = new training_infoDAO();
 	      List<Integer> index = new ArrayList<Integer>();
@@ -210,7 +212,7 @@ public class reco_algo extends HttpServlet {
 	      
 	      List<Integer> q = new ArrayList<Integer>();
 	      
-	      System.out.println("���� ��");
+	      System.out.println("정렬 후");
 	      for (int i = inVos.size(); i > inVos.size()-3; i--) {
 	        System.out.print(inVos.get(i-1).getTraining_index()+":"+inVos.get(i-1).getScore()+"\t");
 		    System.out.println(training_info_dao.select_training_name(inVos.get(i-1).getTraining_index()));
