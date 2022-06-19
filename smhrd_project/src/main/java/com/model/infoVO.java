@@ -1,5 +1,7 @@
 package com.model;
 
+//추천 알고리즘 사용용 VO
+//운동 정보 + 가중치 결과 값(score)
 public class infoVO {
 	int training_index;
 	String training_part;
@@ -57,11 +59,11 @@ public class infoVO {
 }
 
 class user_info {
-	String level[] = new String[2]; // ���̵�
-	String favor_training_part[] = new String[2]; // ��ȣ ����
-	String hate_favor_training_part; // ��ȣ ����
-	String yesterday_training_part[][] = new String[2][2]; // ������, ��Ʋ�� ����
-	String eq[] = new String[2]; // ��ȣ ���
+	String level[] = new String[2]; // 난이도
+	String favor_training_part[] = new String[2]; // 선호 부위
+	String hate_favor_training_part; // 비선호 부위
+	String yesterday_training_part[][] = new String[2][2]; // 어제자, 이틀전 부위
+	String eq[] = new String[2]; // 선호 장비
 
 	public user_info(String[] level, String[] favor_training_part, String hate_favor_training_part, String[][] yesterday_training_part,
 			String[] eq) {
@@ -115,12 +117,13 @@ class user_info {
 
 }
 
+// 각 항목에 대한 가중치 저장 vo(클래스)
 class score_list {
-	double level_score = 1;
-	double favor_training_part_score = 1;
-	double hate_training_part_score = 1;
-	double yesterday_training_part_score = 1;
-	double eq_score = 1;
+	double level_score = 1; //가중치
+	double favor_training_part_score = 1; //선호운동
+	double hate_training_part_score = 1; //비선호 운동
+	double yesterday_training_part_score = 1; //이전 운동 내역
+	double eq_score = 1; //선호 장비
 
 	public double getLevel_score() {
 		return level_score;
