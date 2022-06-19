@@ -23,6 +23,10 @@ public class select_index extends HttpServlet {
 	
 //	String training_date = request.getParameter("training_date");
 	
+	//접속일에 운동을 추천 받지 않았다면
+	//설문 페이지로 이동
+	//추천 받은 이력(오늘자 운동)이 있다면
+	//운동 상세 페이지로 이동
 	user_training_infoDAO dao = new user_training_infoDAO();
 	HttpSession session = request.getSession();
 	String user_id =((user_infoVO)session.getAttribute("uvo")).getUser_id();
