@@ -29,9 +29,13 @@ public class LoginService extends HttpServlet {
 		
 		user_infoDAO dao = new user_infoDAO();
 		
+		//로그인 결과 확인
 		user_infoVO result = dao.login(uvo);
 		
 		
+		//로그인 되었다면, result는 null 값이 아닌 다른 값을 가지고 있음
+		//로그인 되지 않았다면, result는 null 값을 가짐
+		//로그인 성공시 session 값에 로그인 정보 저장
 		if(result != null) {
 			System.out.println("·Î±×ÀÎ ¼º°ø");
 			
