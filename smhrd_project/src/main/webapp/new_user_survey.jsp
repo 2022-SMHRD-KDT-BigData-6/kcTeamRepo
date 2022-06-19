@@ -44,7 +44,7 @@
 선호 운동기구 1,2 순위 : 바벨, 덤벨, 머신
 선호 운동 난이도 1,2 순위 : Beginner, Intermediate, Advanced
 비선호 운동부위 : 팔, 등, 엉덩이, 하체, 가슴, 어깨, 전신, 없음
---!>
+-->
           <form action="reco_algo" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-select u-label-top u-form-group-1">
               <label for="select-37b4" class="u-label">운동 부위 선택</label>
